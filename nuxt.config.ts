@@ -1,8 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    pageTransition: {name: 'page', mode: 'out-in'}
+  },
   devtools: { enabled: true },
   modules: [
-    '@invictus.codes/nuxt-vuetify'
+    '@invictus.codes/nuxt-vuetify',
+    '@nuxt/content'
+    
   ],
   vuetify: {
     /* vuetify options */

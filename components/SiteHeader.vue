@@ -1,6 +1,6 @@
 <script setup>
-const route = { name: "index" }
-
+const route = useRoute()
+console.log(route)
 const title = "Supermanzer.io"
 
 const navigationItems = [
@@ -17,11 +17,11 @@ const navigationItems = [
 
 <template>
   <div>
-    <v-toolbar
+    <v-app-bar
       dark
       prominent
       class="text-white font-weight-black"
-      image="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      image="/img/banner.webp"
     >
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
@@ -39,6 +39,6 @@ const navigationItems = [
           {{ item.name }}
         </v-btn>
       </v-toolbar-items>
-    </v-toolbar>
+    </v-app-bar>
   </div>
 </template>

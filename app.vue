@@ -1,8 +1,9 @@
 <template>
-  <SiteHeader />
-  <v-container>
-    <v-card color="blue lighten-3">
-      <v-card-title>Hello Nuxt!</v-card-title>
-    </v-card>
-  </v-container>
+  <v-layout>
+    <SiteHeader />
+    <v-main>
+      <NuxtPage />
+    </v-main>
+    <SiteFooter />
+  </v-layout>
 </template>
