@@ -1,8 +1,7 @@
 <script setup>
 const route = useRoute()
-console.log(route)
+const drawer = useState("drawer", () => false)
 const title = "Supermanzer.io"
-
 const navigationItems = [
   { name: "Home", href: "/", active: route.name == "index" },
   { name: "Blog", href: "/blog", active: route.name.includes("blog") },
@@ -17,19 +16,32 @@ const navigationItems = [
 
 <template>
   <div>
-    <v-app-bar
-      dark
-      prominent
-      class="text-white font-weight-black"
-      image="/img/banner.webp"
-    >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+    <v-navigation-drawer temporary v-model="drawer">
+      <v-list-item
+        title="Supermanzer.io"
+        subtitle="Site of Supermanzer"
+      ></v-list-item>
+      <v-divider></v-divider>
+      <v-list-item
+        v-for="item in navigationItems"
+        :key="item.name"
+        :href="item.href"
+        :active="item.active"
+      >
+        {{ item.name }}
+      </v-list-item>
+    </v-navigation-drawer>
+    <v-toolbar prominent class="font-weight-black semi_op" :order="-1">
+      <v-app-bar-nav-icon
+        class="d-sm-flex d-md-none"
+        @click="drawer = !drawer"
+      ></v-app-bar-nav-icon>
 
       <v-toolbar-title>{{ title }}</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
-      <v-toolbar-items>
+      <v-toolbar-items class=".d-none .d-md-block-and-up">
         <v-btn
           v-for="item in navigationItems"
           :key="item.name"
@@ -39,6 +51,12 @@ const navigationItems = [
           {{ item.name }}
         </v-btn>
       </v-toolbar-items>
-    </v-app-bar>
+    </v-toolbar>
   </div>
 </template>
+
+<style lang="css">
+.semi_op {
+  background: rgba(0 0 0/ 30%) !important;
+}
+</style>

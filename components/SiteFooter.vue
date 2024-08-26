@@ -18,13 +18,11 @@ export default {
 </script>
 
 <template>
-  <v-app-bar location="bottom" style="min-height=140px">
-    <v-row justify="center">
-      <v-col cols="12" class="text-center">
-        <v-btn v-for="link in links" :key="link.name" :href="link.href" icon>
-          <v-icon>{{ link.icon }}</v-icon>
-        </v-btn>
-      </v-col>
-    </v-row>
-  </v-app-bar>
+  <v-footer :absolute="true" class="semi_op">
+    <div>
+      <v-btn v-for="link in links" :key="link.name" :href="link.href" icon>
+        <v-icon class="text-white">{{ link.icon }}</v-icon>
+      </v-btn>
+    </div>
+  </v-footer>
 </template>
