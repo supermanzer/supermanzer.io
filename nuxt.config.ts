@@ -16,21 +16,33 @@ export default defineNuxtConfig({
     '@invictus.codes/nuxt-vuetify',
     '@nuxt/content',
     '@nuxt/image',
-    
+    'nuxt-icon',
   ],
 
   content: {
     // Nuxt content configuration options
+    // https://content.nuxtjs.org/api/configuration
     highlight: {
-      theme: 'nord',
+      theme: 'material-theme-ocean',
       preload: ['js', 'css', 'python', 'bash', 'vue']
+    },
+    markdown: {
+      anchorLinks: false
     }
   },
 
   image: {
     // NuxtImage configuration options
+    // https://image.nuxt.com/get-started/configuration
   },
 
+  icon: {
+    // NuxtIcon configuration options: 
+    // https://nuxt.com/modules/icon
+    serverBundle: {
+      collections: ['uil', 'mdi']
+    }
+  },
   vuetify: {
     /* vuetify options */
     vuetifyOptions: {

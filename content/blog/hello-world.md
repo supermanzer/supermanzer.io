@@ -28,6 +28,8 @@ It appears that headings of level 2 and down are linked/highlighted like anchor 
 ## Content Components
 
 
-::callouts{type="success" title="Test Callout"}
+:::callouts{type="success" title="Test Callout"}
 This is my callout
-::
+:::
+
+Things and stuff

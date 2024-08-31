@@ -11,6 +11,11 @@ const navigationItems = [
     active: route.name.includes("projects"),
   },
   { name: "Photos", href: "/photos", active: route.name.includes("photos") },
+  {
+    name: "Stripe",
+    href: "/stripe",
+    active: route.name.includes("stripe"),
+  },
 ]
 </script>
 
@@ -31,7 +36,7 @@ const navigationItems = [
         {{ item.name }}
       </v-list-item>
     </v-navigation-drawer>
-    <v-toolbar prominent class="font-weight-black semi_op" :order="-1">
+    <v-toolbar prominent class="font-weight-black" :order="-1" elevation="2">
       <v-app-bar-nav-icon
         class="d-sm-flex d-md-none"
         @click="drawer = !drawer"
@@ -41,7 +46,7 @@ const navigationItems = [
 
       <v-spacer></v-spacer>
 
-      <v-toolbar-items class=".d-none .d-md-block-and-up">
+      <v-toolbar-items class="d-none d-md-flex">
         <v-btn
           v-for="item in navigationItems"
           :key="item.name"

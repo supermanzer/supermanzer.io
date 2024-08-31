@@ -1,24 +1,29 @@
 <template>
   <v-app>
-    <!-- <v-img
+    <v-img
       cover
-      src="img/home.jpeg"
+      src="/img/home.jpeg"
       gradient="to top, rgba(0,0,0,0.1), rgba(0,0,0,0.2)"
-    > -->
-    <NuxtImg src="img/home.jpeg">
+      :eager="true"
+    >
       <SiteHeader />
       <v-main>
-        <v-container fluid>
+        <v-container>
           <NuxtPage />
         </v-container>
       </v-main>
       <SiteFooter />
-    </NuxtImg>
-    <!-- </v-img> -->
+    </v-img>
   </v-app>
 </template>
 
-<script setup></script>
+<script setup>
+const img = useImage()
+const backgroundStyles = computed(() => {
+  const imgUrl = img("img/home.jpeg", { width: 100 })
+  return { backgroundImage: `url('${imgUrl})` }
+})
+</script>
 
 <style lang="css" scoped>
 main {

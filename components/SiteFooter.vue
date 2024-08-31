@@ -6,11 +6,13 @@ export default {
         name: "Github",
         href: "https://github.com/supermanzer",
         icon: "mdi-github",
+        tooltip_text: "Checkout out my Github profile",
       },
       {
         name: "LinkedIn",
         href: "https://www.linkedin.com",
         icon: "mdi-linkedin",
+        tooltip_text: "Check out my LinkedIn profile",
       },
     ],
   }),
@@ -18,11 +20,20 @@ export default {
 </script>
 
 <template>
-  <v-footer :absolute="true" class="semi_op">
-    <div>
-      <v-btn v-for="link in links" :key="link.name" :href="link.href" icon>
-        <v-icon class="text-white">{{ link.icon }}</v-icon>
-      </v-btn>
-    </div>
+  <v-footer class="bg-indigo" border app>
+    <v-row justify="center" no-gutters>
+      <v-tooltip
+        v-for="link in links"
+        :key="link.name"
+        :text="link.tooltip_text"
+        location="top"
+      >
+        <template v-slot:activator="{ props }">
+          <v-btn icon class="mx-4" v-bind="props">
+            <v-icon>{{ link.icon }}</v-icon>
+          </v-btn>
+        </template>
+      </v-tooltip>
+    </v-row>
   </v-footer>
 </template>

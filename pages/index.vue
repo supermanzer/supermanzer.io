@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
-  // layout: "home",
+  layout: "home",
 })
 </script>
 
@@ -8,24 +8,32 @@ definePageMeta({
   <v-container class="fill-height">
     <v-row justify="space-around" class="mt-12">
       <v-card class="text-white semi_op">
-        <!-- <v-img
-          src="https://images.pexels.com/photos/3747150/pexels-photo-3747150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          cover
-          class="d-flex align-end text-white"
-          height="500"
-        > -->
-        <!-- <v-card-title>Hello</v-card-title> -->
-        <!-- </v-img> -->
         <v-divider class="my-4"></v-divider>
         <v-card-text>
           <p class="text-h2">Hi, I'm Ryan Manzer.</p>
-          <p class="text-h4">Pythonista, Djangonaut, and general nerd.</p>
-          <v-divider class="my-4"></v-divider>
+          <v-divider class="my-4 test-white white"></v-divider>
+          <p class="text-h4">
+            Full stack software engineer, oceanographer, gentleman scientist
+          </p>
+
+          <p></p>
         </v-card-text>
       </v-card>
     </v-row>
-    <v-row class="my-10">
+    <v-row class="my-6">
       <ContentDoc />
     </v-row>
   </v-container>
 </template>
+
+<style lang="css">
+code {
+  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
+    linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.25) 200%
+    );
+  background-blend-mode: multiply;
+}
+</style>

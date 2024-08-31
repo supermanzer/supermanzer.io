@@ -1,7 +1,7 @@
 <template>
-  <main>
+  <div>
     <ContentDoc />
-  </main>
+  </div>
 </template>
 
 <script setup>
