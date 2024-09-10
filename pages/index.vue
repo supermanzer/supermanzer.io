@@ -2,38 +2,37 @@
 definePageMeta({
   layout: "home",
 })
+
+const { data: posts } = await useAsyncData("latest-posts", () =>
+  queryContent("blog").sort().limit(3).find()
+)
 </script>
 
 <template>
-  <v-container class="fill-height">
+  <div>
     <v-row justify="space-around" class="mt-12">
       <v-card class="text-white semi_op">
-        <v-divider class="my-4"></v-divider>
+        <v-divider class="my-4" />
         <v-card-text>
           <p class="text-h2">Hi, I'm Ryan Manzer.</p>
-          <v-divider class="my-4 test-white white"></v-divider>
+          <v-divider class="my-4 test-white white" />
           <p class="text-h4">
             Full stack software engineer, oceanographer, gentleman scientist
           </p>
-
-          <p></p>
         </v-card-text>
       </v-card>
     </v-row>
-    <v-row class="my-6">
-      <ContentDoc />
+    <v-row class="mt-12">
+      <v-col cols="12" sm="4" offset-sm="4">
+        <BlogPostCard
+          v-for="post in posts"
+          :key="post._id"
+          :post="post"
+          class="my-4"
+        />
+      </v-col>
     </v-row>
-  </v-container>
+  </div>
 </template>
 
-<style lang="css">
-code {
-  background: linear-gradient(to bottom, #323232 0%, #3f3f3f 40%, #1c1c1c 150%),
-    linear-gradient(
-      to top,
-      rgba(255, 255, 255, 0.4) 0%,
-      rgba(0, 0, 0, 0.25) 200%
-    );
-  background-blend-mode: multiply;
-}
-</style>
+<style lang="css"></style>

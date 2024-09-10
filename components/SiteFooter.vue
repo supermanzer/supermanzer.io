@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <v-footer class="bg-indigo" border app>
+  <v-footer class="bg-indigo" border app z-index="-1">
     <v-row justify="center" no-gutters>
       <v-tooltip
         v-for="link in links"

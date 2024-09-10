@@ -1,5 +1,12 @@
 <template>
-  <v-alert :type="props.type" :title="props.title" outlined>
+  <v-alert
+    v-model="open"
+    :type="props.type"
+    :title="props.title"
+    outlined
+    closable
+    density="comfortable"
+  >
     <slot />
   </v-alert>
 </template>
@@ -9,6 +16,7 @@ const props = defineProps({
   title: String,
   type: String,
 })
+const open = ref(true)
 </script>
 
 <style lang="scss" scoped></style>

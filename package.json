@@ -12,6 +12,7 @@
   "devDependencies": {
     "@invictus.codes/nuxt-vuetify": "^0.3.0",
     "@nuxt/devtools": "latest",
+    "@nuxt/eslint": "^0.5.6",
     "nuxt": "^3.13.0",
     "nuxt-icon": "^0.5.0",
     "sass": "^1.77.8",

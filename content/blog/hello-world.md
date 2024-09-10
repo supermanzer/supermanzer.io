@@ -1,10 +1,12 @@
 ---
 title: Hello World
 description: Programming instructions for new concepts
+cover_image: img/home.jpeg
 author:
     name: Ryan Manzer
     github: https://github.com/supermanzer
     description: He puts the Manzer in Supermanzer
+    image: /img/supermanzer.jpeg
 ---
 
 # Hello World
