@@ -11,17 +11,15 @@ const { data: posts } = await useAsyncData("latest-posts", () =>
 <template>
   <div>
     <v-row justify="space-around" class="mt-12">
-      <v-card class="text-white semi_op">
-        <v-divider class="my-4" />
-        <v-card-text>
-          <p class="text-h2">Hi, I'm Ryan Manzer.</p>
-          <v-divider class="my-4 test-white white" />
-          <p class="text-h4">
-            Full stack software engineer, oceanographer, gentleman scientist
-          </p>
-        </v-card-text>
-      </v-card>
+      <v-col cols="8" class="text-center">
+        <p class="text-md-h1 text-sm-h3 mb-4 text-white">Hi, I'm Ryan Manzer</p>
+        <p class="subheading mb-3 text-white">
+          Full stack software engineer, oceanographer, gentleman scientist
+        </p>
+      </v-col>
     </v-row>
+    <v-divider class="text-white my-5" />
+    <HomeNav />
     <v-row class="mt-12">
       <v-col cols="12" sm="4" offset-sm="4">
         <BlogPostCard

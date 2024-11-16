@@ -3,7 +3,7 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   app: {
-    pageTransition: {name: 'page', mode: 'out-in'}
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
 
   build: {
@@ -13,19 +13,24 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   modules: [
-    '@invictus.codes/nuxt-vuetify',
     '@nuxt/content',
     '@nuxt/image',
     'nuxt-icon',
-    '@nuxt/eslint'
+    '@nuxt/eslint',
+    // '@pinia/nuxt',
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error some sort of something or other
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
+    },
   ],
-
   content: {
     // Nuxt content configuration options
     // https://content.nuxtjs.org/api/configuration
     highlight: {
       theme: 'material-theme-ocean',
-      preload: ['js', 'css', 'python', 'bash', 'vue']
+      preload: ['js', 'css', 'python', 'bash', 'vue', 'rust']
     },
     markdown: {
       anchorLinks: false
@@ -44,23 +49,12 @@ export default defineNuxtConfig({
       collections: ['uil', 'mdi']
     }
   },
-  vuetify: {
-    /* vuetify options */
-    vuetifyOptions: {
-      // @TODO: list all vuetify options
+  vite: {
+    vue: {
+      template: {
+        transformAssetUrls,
+      },
     },
-
-    moduleOptions: {
-      /* nuxt-vuetify module options */
-      treeshaking: true, 
-      useIconCDN: true,
-
-      /* vite-plugin-vuetify options */
-      styles: true,
-      autoImport: true,
-      useVuetifyLabs: true, 
-    }
   },
-
   compatibilityDate: '2024-08-18'
 })

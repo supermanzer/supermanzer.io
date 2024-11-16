@@ -1,3 +1,3 @@
-# My Projects
-
-## I like building things
+:::PageHeader{title="My Projects" subtitle="I like building things"}
+Thiis is a thing
+:::

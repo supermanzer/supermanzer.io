@@ -17,16 +17,19 @@ const navigationItems = [
     active: route.name.includes("stripe"),
   },
 ]
+const props = defineProps({
+  showLinks: { type: Boolean, required: false, default: true },
+  transparent: {type: Boolean, required: false, default: false},
+})
+
+
 </script>
 
 <template>
   <div>
-    <v-navigation-drawer temporary v-model="drawer">
-      <v-list-item
-        title="Supermanzer.io"
-        subtitle="Site of Supermanzer"
-      ></v-list-item>
-      <v-divider></v-divider>
+    <v-navigation-drawer v-model="drawer" temporary>
+      <v-list-item title="Supermanzer.io" subtitle="Site of Supermanzer" />
+      <v-divider />
       <v-list-item
         v-for="item in navigationItems"
         :key="item.name"
@@ -36,17 +39,20 @@ const navigationItems = [
         {{ item.name }}
       </v-list-item>
     </v-navigation-drawer>
-    <v-toolbar prominent class="font-weight-black" :order="-1" elevation="2">
+
+
+    <v-toolbar prominent class="" :order="-1" elevation="2">
       <v-app-bar-nav-icon
+        v-if="props.showLinks"
         class="d-sm-flex d-md-none"
         @click="drawer = !drawer"
-      ></v-app-bar-nav-icon>
+      />
 
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <v-toolbar-title >{{ title }}</v-toolbar-title>
 
-      <v-spacer></v-spacer>
+      <v-spacer />
 
-      <v-toolbar-items class="d-none d-md-flex">
+      <v-toolbar-items v-if="props.showLinks" class="d-none d-md-flex">
         <v-btn
           v-for="item in navigationItems"
           :key="item.name"
@@ -61,7 +67,10 @@ const navigationItems = [
 </template>
 
 <style lang="css">
-.semi_op {
+.semi-op {
   background: rgba(0 0 0/ 30%) !important;
+  .v-toolbar-title {
+    color: white;
+  }
 }
 </style>

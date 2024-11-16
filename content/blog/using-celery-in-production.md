@@ -6,8 +6,8 @@ img: https://img.stackshare.io/service/1075/celery.png
 published_to_twitter: false
 author:
   name: Ryan Manzer
-  bio: He puts the Manzer in Supermanzer
-  image: '/images/supermanzer.jpeg'
+  description: He puts the Manzer in Supermanzer
+  image: '/img/supermanzer.jpeg'
 tags:
   - tech
   - celery

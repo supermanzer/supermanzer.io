@@ -5,6 +5,7 @@
       lines="three"
       :title="author.name"
       :subtitle="author.description"
+      class="my-0"
     >
       <template v-slot:append>
         <v-avatar tile :rounded="0" size="100">
