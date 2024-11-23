@@ -19,7 +19,8 @@ I'm using Nuxt3 and Nuxt Content to create this site.  I'm using the Server-Side
 
 ```python
 def is_cool():
-    return "This is pretty cool"
+    # Lets  you know this is pretty cool
+    return True
 ```
 
 ## Header Highlighting
@@ -31,7 +32,5 @@ It appears that headings of level 2 and down are linked/highlighted like anchor 
 
 
 :::callouts{type="info" title="Test Callout"}
-This is my callout
+This is my callout text where I put things and also stuf
 :::
-
-Things and stuff

@@ -24,7 +24,8 @@
   "dependencies": {
     "@mdi/font": "^7.3.67",
     "@nuxt/content": "^2.8.5",
-    "@nuxt/image": "^1.0.0-rc.3"
+    "@nuxt/image": "^1.0.0-rc.3",
+    "nuxt-graphql-client": "^0.2.40"
   },
   "overrides": {
     "vue": "^3.5.10"

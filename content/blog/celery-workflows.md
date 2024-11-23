@@ -4,6 +4,7 @@ description: Improving the business logic of my applications and understanding o
 tech: Celery
 img: https://img.stackshare.io/service/1075/celery.png
 published_to_twitter: false
+created_at: 5/27/2023
 author:
   name: Ryan Manzer
   description: He puts the Manzer in Supermanzer

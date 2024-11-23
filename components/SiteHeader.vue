@@ -2,8 +2,8 @@
 const route = useRoute()
 const drawer = useState("drawer", () => false)
 const title = "Supermanzer.io"
-const navigationItems = [
-  { name: "Home", href: "/", active: route.name == "index" },
+const navigationItems = reactive([
+  { name: "Home", href: "/", active: route.name === "index" },
   { name: "Blog", href: "/blog", active: route.name.includes("blog") },
   {
     name: "Projects",
@@ -16,12 +16,15 @@ const navigationItems = [
     href: "/stripe",
     active: route.name.includes("stripe"),
   },
-]
+])
 const props = defineProps({
   showLinks: { type: Boolean, required: false, default: true },
   transparent: {type: Boolean, required: false, default: false},
 })
 
+const classObject = reactive({
+  'transparent': props.transparent
+})
 
 </script>
 
@@ -41,7 +44,7 @@ const props = defineProps({
     </v-navigation-drawer>
 
 
-    <v-toolbar prominent class="" :order="-1" elevation="2">
+    <v-toolbar prominent :class="classObject" :order="-1" elevation="2">
       <v-app-bar-nav-icon
         v-if="props.showLinks"
         class="d-sm-flex d-md-none"
@@ -67,8 +70,8 @@ const props = defineProps({
 </template>
 
 <style lang="css">
-.semi-op {
-  background: rgba(0 0 0/ 30%) !important;
+.transparent {
+  background: rgba(0 0 0/ 20%) !important;
   .v-toolbar-title {
     color: white;
   }

@@ -16,3 +16,14 @@ const { data: post } = await useAsyncData(`content-${path}`, () =>
   queryContent("/blog").where({ _path: path }).findOne()
 )
 </script>
+
+<style>
+code > span {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+code {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+</style>

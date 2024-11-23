@@ -4,7 +4,7 @@ definePageMeta({
 })
 
 const { data: posts } = await useAsyncData("latest-posts", () =>
-  queryContent("blog").sort().limit(3).find()
+  queryContent("blog").where({title:{$ne: 'Blog'}}).sort().limit(3).find()
 )
 </script>
 

@@ -12,11 +12,18 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
+  runtimeConfig: {
+    graphqlHost: process.env.GQL_HOST,
+    tokenName: process.env.GQL_GITHUB_TOKEN_NAME,
+    tokenValue: process.env.GQL_GITHUB_TOKEN
+  },
+
   modules: [
     '@nuxt/content',
     '@nuxt/image',
     'nuxt-icon',
     '@nuxt/eslint',
+    // 'nuxt-graphql-client',
     // '@pinia/nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
@@ -25,11 +32,20 @@ export default defineNuxtConfig({
       })
     },
   ],
+
+
   content: {
     // Nuxt content configuration options
     // https://content.nuxtjs.org/api/configuration
     highlight: {
-      theme: 'material-theme-ocean',
+      theme: {
+        // Default theme (same as single string)
+        // default: 'material-ocean-light',
+        // Theme used if `html.dark`
+        dark: 'github-dark',
+        // Theme used if `html.sepia`
+        default: 'monokai'
+      },
       preload: ['js', 'css', 'python', 'bash', 'vue', 'rust']
     },
     markdown: {
@@ -37,10 +53,7 @@ export default defineNuxtConfig({
     }
   },
 
-  image: {
-    // NuxtImage configuration options
-    // https://image.nuxt.com/get-started/configuration
-  },
+
 
   icon: {
     // NuxtIcon configuration options: 
@@ -56,5 +69,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
   compatibilityDate: '2024-08-18'
 })
