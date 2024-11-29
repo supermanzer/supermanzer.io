@@ -8,10 +8,6 @@ links:
     url: https://github.com/supermanzer/local-recipe-server
     icon: mdi-github
     text: View on Github
-  dendron:
-    url: https://supermanzer.github.io/MyNotes/notes/ZG5dy128q8nTg2wptcunO/
-    icon: mdi-source-branch
-    text: View Notes
 published_to_twitter: false
 lead:
   name: Ryan Manzer

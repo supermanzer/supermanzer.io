@@ -3,7 +3,7 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default defineNuxtConfig({
   app: {
-    pageTransition: { name: 'page', mode: 'out-in' }
+    // pageTransition: { name: 'page', mode: 'out-in' }
   },
 
   build: {
@@ -49,7 +49,16 @@ export default defineNuxtConfig({
       preload: ['js', 'css', 'python', 'bash', 'vue', 'rust']
     },
     markdown: {
-      anchorLinks: false
+      anchorLinks: false,
+      rehypePlugins: [
+        [
+          'rehype-external-links',
+          {
+            target: '_blank',
+            rel: 'noopener noreferer'
+          }
+        ]
+      ]
     }
   },
 
@@ -68,6 +77,13 @@ export default defineNuxtConfig({
         transformAssetUrls,
       },
     },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler'
+        }
+      }
+    }
   },
 
   compatibilityDate: '2024-08-18'

@@ -54,6 +54,7 @@ const hasLink = (link) => {
         bottom: 1rem;
         width: 100%;
         border-top: 1px solid rgba(0 0 0/ 15%);
+
     }
 </style>
   

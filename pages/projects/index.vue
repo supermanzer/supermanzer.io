@@ -4,7 +4,7 @@
       <ContentDoc />
     </v-col>
     </v-row>
-    <v-row justify="center" class="my-4">
+    <v-row justify="space-around" class="my-4">
     <v-col cols="12" sm="12" md="6" lg="3" v-for="project in projects" :key="project._id">
       <ProjectsProjectCard :project="project" />
     </v-col>

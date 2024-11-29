@@ -1,6 +1,17 @@
 ---
 title: Android Weather App
 summary: A personal Android application that I am working on to sharpen my Android coding skills.
+banner: /img/projects/weather.webp
+tech: Kotlin, API
+links:
+  github:
+    url: https://github.com/supermanzer/WeatherApp
+    icon: mdi-github
+    text: View on Github
+lead:
+  name: Ryan Manzer
+  bio: He puts the Manzer in Supermanzer
+  image: '/img/supermanzer.jpeg'
 ---
 ## Goal
 My intent with this project was to develop my Android programming skills while builidng an app that I think we are all familiar with and use regularly.  This kind of app also involves learning a number of useful paradigms in Android programming, such as
