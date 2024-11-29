@@ -6,7 +6,9 @@
       <v-divider class="my-2" />
       <ContentDoc />
     </v-col>
-      <v-col v-for="post in posts" :key="post._id">
+    </v-row>
+    <v-row>
+      <v-col v-for="post in posts" :key="post._id" >
         <BlogPostCard :post="post" />
       </v-col>
     </v-row>

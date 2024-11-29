@@ -58,7 +58,7 @@ Well then things got really interesting and that gets us to what I'm so excited 
 
 I had known that a good task design is small and self contained, like a good function, but I didn't know how I would keep track of what remained to be processed and how I would ensure that all the records that needed to be related to each other were. That's when I realized what I could do with `groups` and `chains`. A `group` is a set of tasks that are processed in parallel.
 
-```python
+```python [views.py]
 @app.task
 def create_local_purchase_orders(data):
   """Execute PO generating tasks in parallel for all records in data"""

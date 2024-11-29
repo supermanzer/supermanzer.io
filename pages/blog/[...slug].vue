@@ -4,7 +4,11 @@
       <AuthorCard :author="post.author" header="Author" />
     </v-col>
     <v-col cols="12" sm="12" md="8" lg="9">
-      <ContentRenderer :value="post" />
+      <v-theme-provider class="" theme="light">
+        <v-card :title="post.title" :subtitle="post.description" class="px-8">
+          <ContentDoc :value="post" />
+        </v-card>
+      </v-theme-provider>
     </v-col>
   </v-row>
 </template>
