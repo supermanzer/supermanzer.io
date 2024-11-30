@@ -19,15 +19,6 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
 
-  css: [
-    // 'assets/styles/main.scss'
-  ],
-  fonts: {
-    assets: {
-      prefix: '/_fonts/'
-    }
-  },
-
   devtools: { enabled: true },
 
   runtimeConfig: {
@@ -41,7 +32,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-icon',
     '@nuxt/eslint',
-    '@nuxt/fonts',
     // 'nuxt-graphql-client',
     // '@pinia/nuxt',
     (_options, nuxt) => {
