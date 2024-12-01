@@ -1,31 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
-import * as sass from "sass";
 
 export default defineNuxtConfig({
   app: {
     // pageTransition: { name: 'page', mode: 'out-in' }
-    head: {
-      link: [
-        { rel: "preconect", href: "https://fonts.googleapis.com" },
-        { rel: "preconnect", href: "https://fonts.gstatic.com" },
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet' }
-      ]
-    }
   },
 
   build: {
     transpile: ['vuetify'],
-  },
-
-  css: [
-    // 'assets/styles/main.scss'
-  ],
-  fonts: {
-    assets: {
-      prefix: '/_fonts/'
-    }
   },
 
   devtools: { enabled: true },
@@ -41,7 +23,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     'nuxt-icon',
     '@nuxt/eslint',
-    '@nuxt/fonts',
     // 'nuxt-graphql-client',
     // '@pinia/nuxt',
     (_options, nuxt) => {
@@ -99,17 +80,8 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          api: "modern",
-          importers: [
-            new sass.NodePackageImporter()
-          ]
-        },
-        sass: {
-          api: "modern",
-          importers: [
-            new sass.NodePackageImporter()
-          ]
-        },
+          api: 'modern-compiler'
+        }
       }
     }
   },
