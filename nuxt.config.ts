@@ -30,7 +30,7 @@ export default defineNuxtConfig({
     'nuxt-icon',
     '@nuxt/eslint',
     // 'nuxt-graphql-client',
-    // '@pinia/nuxt',
+    '@pinia/nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error some sort of something or other
@@ -88,7 +88,7 @@ export default defineNuxtConfig({
         scss: {
           api: 'modern-compiler'
         }
-      }
+      },
     }
   },
 

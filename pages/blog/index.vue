@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     <v-row>
       <v-col cols="12" sm="12">
       <p class="text-h2">Blog Posts</p>
@@ -12,7 +12,7 @@
         <BlogPostCard :post="post" />
       </v-col>
     </v-row>
-  </div>
+  </v-container>
 </template>
 
 <script setup>

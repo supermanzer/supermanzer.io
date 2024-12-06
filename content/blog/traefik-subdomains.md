@@ -22,7 +22,6 @@ tags:
 
 From what I can tell, people like the reverse proxy and load balancer [Traefik](https://traefik.io/traefik/) for plenty of reasons. But this blog is about what **I'm** excited about so here is why I got so excited once I figured out how to integrate it into my tech stack. While there are many features that I'm excited to explore, the ones I'm going to detail below are what motivated me to spend valuable time learning how to integrate Traefik into my everyday tech stack.
 
----
 
 ### Dynamic Routing Configuration
 
@@ -30,7 +29,6 @@ While I'm still a fan of [NGINX](https://www.nginx.com/) and I actually use it a
 
 <image-asset image="webui-dashboard.png" :width="700" class="my-4"></image-asset>
 
----
 
 ### Sub-domain Routing - All Time Favorite Feature
 
@@ -40,4 +38,4 @@ My definite, all-time favorite feature of Traefik is the ability do route to dif
 
 On the security side of things this has some advantages too. Let me first submit that I am in no way a security expert and there may still be flaws with the architecture I've proposed. That being said, we can use the sub-domain routing Docker network configurations to one of the basic elements of application security: Minimizing the [Attack Surface](https://en.wikipedia.org/wiki/Attack_surface). We can achieve this simply by making the Traefik router the only service directly accessible on the server. For our (potentially many) applications routed by sub-domains, we expose only the web-server (NGINX in my cases) to the Docker network on which they can communicate. All communication within each multi-service application is restricted to the application specific Docker network. This _can_ make it a bit of a pain in the behind to troubleshoot since it's more work for legitimate admins to get into containers running amok, or connect to the DB used by a particular app but if you're worried about security it's a handy feature.
 
-All in all, I've had a lot of fun with the little bit of Traefik that I've explored. I know there is much more that it can do and I look forward getting to know it better, when people aren't clamoring for new features or new applications :-)
+All in all, I've had a lot of fun with the little bit of Traefik that I've explored. I know there is much more that it can do and I look forward getting to know it better, when people aren't clamoring for new features or new applications 😁

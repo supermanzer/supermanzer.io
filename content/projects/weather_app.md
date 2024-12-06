@@ -20,4 +20,7 @@ My intent with this project was to develop my Android programming skills while b
 * Device permissions - For using tghe approximate device location to localize the default forecast
 
 ## Implementation
-I decided to use the classic Views based architecture to keep the new topics to a minimum.
+I decided to use the classic Views based architecture to keep the new topics to a minimum.  I store location records in a local SQLite DB and query National Weather Service APIs to fetch forecast data.  I use Google's locations API to translate a place name into a place with lattitude and longitude.  
+
+There are still plenty of enhancements I could see making as well as some styling bugs I would like to fix but I'm trying to practice setting realistic goals and, once I reach them, taking some time to evaluate what I want to work on next.  This helps me avoid going down coding rabbit holes with no deliverable result.  I'm currently taking a pause on this application to work on other things, like this website.
+

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <v-container>
     <ContentDoc />
-  </div>
+  </v-container>
 </template>
 
 <script setup></script>

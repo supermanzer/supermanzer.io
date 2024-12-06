@@ -36,12 +36,10 @@ I'm still in the process of testing out different approaches to training the OCR
 
 ### Natural Language processing
 
-THis is another area of Machine Learning that is well researched and documented. There are a large number of blogs and courses on these topics and I look forward to digging into this more. In this project I plan to use NLP to break out a recipe into a list of ingredients and a list of steps. Using NLP approaches to differentiate between an incomplete sentence describing an amount of something and a set of sentences directing the reader to take some action _should_ be fairly straightforward. However, since I'm still working on turning an image into text with some degree of fidelity, I have not begun working on this aspect yet.
+This is another area of Machine Learning that is well researched and documented. There are a large number of blogs and courses on these topics and I look forward to digging into this more. In this project I plan to use NLP to break out a recipe into a list of ingredients and a list of steps. Using NLP approaches to differentiate between an incomplete sentence describing an amount of something and a set of sentences directing the reader to take some action _should_ be fairly straightforward. However, since I'm still working on turning an image into text with some degree of fidelity, I have not begun working on this aspect yet.
 
 ## Desired end result
 
 I want to be able to find a recipe I like, snap a photo (or photos) of the text, upload it to a local server on my home network, have a parsed and organized recipe returned to my phone with the option to edit the text prior to saving. I also want a list interface that allows searching by name or by ingredients. One ideal goal is to be able to look in the fridge/cupboard, know I have chicken thighs, onions, carrots, garbanzo beans, and jalapenos, and find any/all recipes that involve using those ingredients.
 
-## Technical Details
 
-I am using my Dendron-powerd note spaces to keep track of my ideas, approaches, and results of my efforts. If you, dear reader, have any interest in following along you can find the latest updates [there](https://supermanzer.github.io/MyNotes/notes/ZG5dy128q8nTg2wptcunO/).

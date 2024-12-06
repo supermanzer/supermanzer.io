@@ -1,17 +1,11 @@
+
+
 <script setup>
-const navigationItems = [
-  { name: "Home", href: "/" },
-  { name: "Blog", href: "/blog" },
-  {
-    name: "Projects",
-    href: "/projects",
-  },
-  { name: "Photos", href: "/photos" },
-  {
-    name: "Stripe",
-    href: "/stripe",
-  },
-]
+import {useNavStore} from '@/stores/nav'
+
+const navigationStore = useNavStore()
+
+const navigationItems = navigationStore.getLinks
 </script>
 
 <template>

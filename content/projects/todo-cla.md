@@ -37,3 +37,6 @@ The output is similarly stragithforward, just noting the file and line number wh
 ## Goal
 
 While many current IDEs have features to collect and catalog these comments, my goal with this project was to produce something that would be part of a public (or private) repository and work to improve collaboration. I envisioned this being used by teams to communicate where one coder had to call it quits and where the next one to pick up the project could get started. Also it would be useful if a solo developer had to walk away from a project for a while and wanted to pick it up again later, from a hosted repository.
+
+## Current Status
+This is a functional Python command line application.  However, I have also started learning Rust (more details on that later) and I think recreating this application in Rust would be a fun extension of this work.
