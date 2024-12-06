@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <SiteHeader />
-    <v-main>
-      <v-container fluid>
+    <v-main >
+      
         <NuxtPage />
-      </v-container>
+      
     </v-main>
     <SiteFooter />
   </v-app>

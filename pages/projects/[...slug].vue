@@ -1,10 +1,10 @@
 
 <template>
-  <div>
+  <v-container>
     <!-- <p class="text-h1">Hi</p> -->
     <p class="text-h4 py-8">Project Details: {{ project.title }}</p>
     <ProjectsProjectDetail :project="project" />
-  </div>
+  </v-container>
 </template>
 
 <script setup lang="js">

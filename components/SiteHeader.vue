@@ -1,22 +1,13 @@
 <script setup>
+import { useNavStore } from '@/stores/nav';
 const route = useRoute()
 const drawer = useState("drawer", () => false)
 const title = "Supermanzer.io"
-const navigationItems = reactive([
-  { name: "Home", href: "/", active: route.name === "index" },
-  { name: "Blog", href: "/blog", active: route.name.includes("blog") },
-  {
-    name: "Projects",
-    href: "/projects",
-    active: route.name.includes("projects"),
-  },
-  { name: "Photos", href: "/photos", active: route.name.includes("photos") },
-  {
-    name: "Stripe",
-    href: "/stripe",
-    active: route.name.includes("stripe"),
-  },
-])
+
+const navigationStore = useNavStore()
+const navigationItems = navigationStore.getLinks
+navigationStore.updateActive(route.name)
+
 const props = defineProps({
   showLinks: { type: Boolean, required: false, default: true },
   transparent: {type: Boolean, required: false, default: false},
