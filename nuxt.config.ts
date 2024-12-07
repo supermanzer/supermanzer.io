@@ -46,11 +46,11 @@ export default defineNuxtConfig({
     highlight: {
       theme: {
         // Default theme (same as single string)
-        // default: 'material-ocean-light',
+        default: 'dark-plus',
         // Theme used if `html.dark`
-        dark: 'github-dark',
+        dark: 'night-owl',
         // Theme used if `html.sepia`
-        default: 'monokai'
+        sepia: 'monokai'
       },
       preload: ['js', 'css', 'python', 'bash', 'vue', 'rust']
     },

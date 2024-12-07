@@ -13,7 +13,7 @@
         </v-avatar>
         </v-card-title>
         <v-divider></v-divider>
-        <v-card-text class="">{{ project.summary }}</v-card-text>
+        <v-card-text class="">{{ project.description }}</v-card-text>
 
         <v-card-actions class="bottom-actions">
         
