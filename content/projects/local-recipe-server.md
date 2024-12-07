@@ -1,7 +1,9 @@
 ---
 title: Local Recipe Server
-summary: This project is an effort to provide an application for saving, searching, and displaying recipes.  It involves using OCR and NLP machine learning, local network DNS and/or IP mapping, and Android development
+description: This project is an effort to provide an application for saving, searching, and displaying recipes.  It involves using OCR and NLP machine learning, local network DNS and/or IP mapping, and Android development
 tech: Python, ML, Kotlin
+status: In Progress
+version: 0.0.1
 banner: /img/projects/beef_barley.jpg
 links:
   github:
@@ -14,6 +16,8 @@ lead:
   bio: He puts the Manzer in Supermanzer
   image: '/img/supermanzer.jpeg'
 ---
+
+![european river](/img/blog/european-river.jpeg)
 
 ## Motivation
 
