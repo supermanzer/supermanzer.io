@@ -10,23 +10,28 @@
             >
                 <v-card-title >
                     <v-icon>mdi-folder-wrench-outline</v-icon>
-                    {{ title }}
+                    <slot name="title">
+                        Under construction ...
+                    </slot>
                 </v-card-title>
-                <div v-if="subtitle">
-                    <v-divider></v-divider>
-                    <v-card-subtitle v-text="subtitle"></v-card-subtitle>
+                <div>
+                    <v-divider class="white text-white"></v-divider>
+                    <v-card-subtitle>
+                        <slot name="subtitle" />
+                    </v-card-subtitle>
                 </div>
             </v-img>
-            <v-card-text v-text="text" class="pa-4"></v-card-text>
+            <v-card-text class="pa-4">
+                <slot name="text">
+                    This section of this site is currently being worked on to ensure it's fabulous.  Check back later to be amazed!
+                </slot>
+            </v-card-text>
         </v-card>
     </v-row>
 </template>
 
 <script setup lang="js">
 const props = defineProps({
-    title: {type: String, required: false, default: "Under construction ..."},
-    subtitle: {type: String, required: false},
-    text: {type: String, required: false, default: "This section of this site is currently being worked on to ensure it's fabulous.  Check back later to be amazed!"},
     img_src: {type: String, required: false, default: "/img/components/construction.jpeg"}
 })
 </script>
