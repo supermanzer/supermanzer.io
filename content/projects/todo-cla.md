@@ -3,7 +3,7 @@ title: TODO Catalog CLA
 description: A command line application that scans a code base and generates a TODO.md that logs all TOOO comments in project directory, written in Python
 banner: /img/projects/code-typing.jpeg
 status: Complete
-version: 0.1.0
+version: 0.1.1
 links:
   github:
     url: https://github.com/supermanzer/todo-cla

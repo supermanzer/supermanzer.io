@@ -17,8 +17,6 @@ lead:
   image: '/img/supermanzer.jpeg'
 ---
 
-![european river](/img/blog/european-river.jpeg)
-
 ## Motivation
 
 I love to cook and I have amassed a large number of cookbooks and copies of Cooks Illustrated and other magazines. The problem I run into is, when I want to make a recipe from one of them I spend a good 30 minutes rummaging through my copies and eventually give up and just check out one of the inferior recipes that are nonetheless easily returned in a Google search.

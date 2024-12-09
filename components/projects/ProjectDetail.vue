@@ -24,10 +24,12 @@
                     </v-col>
                     <v-col cols="12" sm="12" md="6">
                         <projects-links :links="project.links" />
+                        <ProjectsVersionStatus :status="project.status" :version="project.version" format="list"/>
                     </v-col>
                 </v-row>
             </v-img>
-            <v-card-text class="prose">
+            <v-card-text>
+                
                 <ContentDoc />
             </v-card-text>
         </v-card>
