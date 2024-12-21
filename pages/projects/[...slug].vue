@@ -18,7 +18,7 @@ const { data: project } = await useAsyncData(`content-${path}`, () =>
 </script>
 
 <style scoped>
-[data-content-id] {
+/* [data-content-id] {
   color: red !important;
 }
 
@@ -40,5 +40,5 @@ const { data: project } = await useAsyncData(`content-${path}`, () =>
 }
 .block-btn {
   margin-top: 1em;
-}
+} */
 </style>
