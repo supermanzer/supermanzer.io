@@ -1,9 +1,9 @@
 <template>
     <v-row v-if="format=== 'row'">
-        <v-col cols="12" sm="12" md="5" class="d-flex justify-start mx-0 px-0">
+        <v-col cols="12" sm="12" md="5" class="d-flex justify-space-around mx-0 px-0">
             Version: <code>{{ version }}</code> 
         </v-col>
-        <v-col cols="12" sm="12" md="7" class="d-flex justify-start mx-0 px-0">
+        <v-col cols="12" sm="12" md="7" class="d-flex justify-space-around mx-0 px-0">
             Status: 
             <v-chip density="compact" rounded="xs" elevation="1" :class="chipStatus">
                 {{ status }}
