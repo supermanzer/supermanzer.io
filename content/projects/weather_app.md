@@ -27,6 +27,7 @@ I decided to use the classic Views based architecture to keep the new topics to 
 There are still plenty of enhancements I could see making as well as some styling bugs I would like to fix but I'm trying to practice setting realistic goals and, once I reach them, taking some time to evaluate what I want to work on next.  This helps me avoid going down coding rabbit holes with no deliverable result.  I'm currently taking a pause on this application to work on other things, like this website.
 
 ## Known bugs
+
 * Not all the contents of the daily forecast list view are displayed when scrolling - [GH Issue](https://github.com/supermanzer/WeatherApp/issues/6)
   * I think this is because of a conflict between fragment layout resources and the activity layout
   * Despite setting every `layout_height` to `wrap_content` on every layout file, I'm still seeing scrolling inside the child fragment.
