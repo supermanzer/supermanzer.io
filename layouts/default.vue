@@ -2,9 +2,7 @@
   <v-app>
     <SiteHeader />
     <v-main >
-      
         <NuxtPage />
-      
     </v-main>
     <SiteFooter />
   </v-app>
@@ -14,8 +12,8 @@
 main {
   /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
   /* margin-bottom: 2em; */
-  padding: 4em 4em;
-  margin: 0em 3em;
+  /* padding: 4em 4em; */
+  /* margin: 0em 3em; */
 }
 
 main.dark {

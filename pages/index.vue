@@ -20,17 +20,16 @@ const { data: posts } = await useAsyncData("latest-posts", () =>
     </v-row>
     <v-divider class="text-white my-5" />
     <HomeNav />
-    <v-row class="mt-12">
-      <v-col cols="12" sm="4" offset-sm="4">
-        <BlogPostCard
-          v-for="post in posts"
-          :key="post._id"
-          :post="post"
-          class="my-4"
-        />
-      </v-col>
-    </v-row>
+    <BlogLatestsPosts class="bottom-posts" :dark="true" />
   </div>
 </template>
 
-<style lang="css"></style>
+<style lang="css">
+
+.bottom-posts {
+  position: absolute;
+  bottom: 10rem;
+  background: rgba(0 0 0/ 10%) !important;
+}
+
+</style>

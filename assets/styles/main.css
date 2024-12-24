@@ -5,11 +5,20 @@ TODO: Find a more elegant way to style lists and headers within Nuxt Content
 div[data-content-id] {
     line-height: 1.6;
 
-    ul {
+    ul,
+    ol {
         padding-left: 1.5rem;
     }
 
     h2 {
         margin-top: 0.75em;
+    }
+
+    h3 {
+        margin-top: 0.5em;
+    }
+
+    pre {
+        padding: 0.2em 0.2em;
     }
 }
