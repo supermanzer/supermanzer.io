@@ -67,6 +67,7 @@ const hasLink = (link) => {
         position: absolute;
         bottom: 4.5rem;
         width: 100%;
+        margin-top: 1em;
     }
 </style>
   
