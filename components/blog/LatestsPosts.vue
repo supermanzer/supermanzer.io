@@ -26,6 +26,6 @@ const props = defineProps({
 })
 
 const { data: posts } = await useAsyncData("latest-posts", () =>
-  queryContent("blog").where({title:{$ne: 'Blog'}}).sort().limit(4).find()
+  queryContent("blog").where({title:{$ne: 'Blog'}}).sort({created: -1, $numeric: true}).limit(4).find()
 )
 </script>
