@@ -12,6 +12,7 @@ tags:
   - vuetify
   - webdev
   - photography
+project: website
 ---
 
 ## Inspiration
