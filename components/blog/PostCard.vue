@@ -1,5 +1,5 @@
 <script setup>
-const { post } = defineProps(["post"])
+defineProps({"post": Object})
 </script>
 
 <template>
