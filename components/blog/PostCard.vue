@@ -1,5 +1,14 @@
 <script setup>
-defineProps({"post": Object})
+defineProps({"post": 
+  {type: Object, required: true, default: () => {
+    return {
+      _path: '',
+      title: '',
+      description: '',
+      img: ''
+    }
+  }
+}})
 </script>
 
 <template>
