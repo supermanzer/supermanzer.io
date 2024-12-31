@@ -1,6 +1,6 @@
 ---
-title: placeholder
-description: placeholder
+title: Brooklyn Bridge at night
+description: Photo taken from the Brooklyn bridge on a cloudy night with a full moon.
 details:
   Make: Google
   Model: Pixel 7 Pro
