@@ -22,3 +22,8 @@ div[data-content-id] {
         padding: 0.2em 0.2em;
     }
 }
+
+.border-right {
+    border-right: 1px solid #e1e4e8;
+
+}
