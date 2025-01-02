@@ -70,7 +70,9 @@ export default defineNuxtConfig({
     }
   },
 
-
+  image: {
+    provider: 'netlify',
+  },
 
   icon: {
     // NuxtIcon configuration options: 

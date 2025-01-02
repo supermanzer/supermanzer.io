@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="js">
-const props = defineProps({
+defineProps({
     section: {type: Object, required: false, default: () => {
        return  {parallax_image: '',
         title: ''}

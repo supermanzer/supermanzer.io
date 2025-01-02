@@ -18,6 +18,7 @@ const navigationItems = navigationStore.getLinks
       sm="12"
       md="3"
       lg="2"
+      :class="{'text-center': true}"
     >
       <v-btn :text="item.name" :href="item.href" variant="text" class="text-white" />
     </v-col>
