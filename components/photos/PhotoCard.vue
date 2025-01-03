@@ -31,7 +31,7 @@
                             <ul>
                                 <li>Captured: {{ photo.details.DateTimeOriginal }}</li>
                                 <li>Camera: {{ photo.details.Model }}</li>
-                                <li>Shutter Speed: {{ photo.details.ExposureTime }}s</li>
+                                <li>Shutter Speed: {{ shutterSpeed }} </li>
                             </ul>
                         </v-col>
                         <v-col cols="12" sm="12" md="6">
@@ -67,5 +67,10 @@ const props = defineProps({
 const img = useImage()
 
 const dialog = ref(false)
+
+const shutterSpeed = computed(() => {
+    return `1/${1/props.photo.details.ExposureTime}s`
+})
+
 
 </script>
