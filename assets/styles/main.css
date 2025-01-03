@@ -2,7 +2,7 @@
 TODO: Find a more elegant way to style lists and headers within Nuxt Content
 */
 
-div[data-content-id] {
+div {
     line-height: 1.6;
 
     ul,
