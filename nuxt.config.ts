@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: "" },
-        { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" }
+        { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" },
       ]
     }
   },
@@ -18,7 +18,13 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   },
 
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+
+    timeline: {
+      enabled: true
+    }
+  },
 
   runtimeConfig: {
     graphqlHost: process.env.GQL_HOST,
@@ -27,20 +33,17 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/content',
-    '@nuxt/image',
-    'nuxt-icon',
-    '@nuxt/eslint',
-    // 'nuxt-graphql-client',
-    '@pinia/nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error some sort of something or other
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
-  ],
+    '@nuxt/content', '@nuxt/image', 'nuxt-icon', '@nuxt/eslint', '@pinia/nuxt', '@nuxt/scripts', 'nuxt-gtag'],
 
+  gtag: {
+    id: 'G-XWSPQV1JL1'
+  },
 
   content: {
     // Nuxt content configuration options
@@ -95,6 +98,7 @@ export default defineNuxtConfig({
       },
     }
   },
+
 
   compatibilityDate: '2024-08-18'
 })
