@@ -12,10 +12,10 @@ tags:
     - rust
 ---
 ## Why I started
-In my recent professional experience, I have been exposed to working in Golang and Java/Kotlin so my exposure to static typed languages has been growing.  I have realized there are some use cases where this approach makes sense and I figured there were things I could learn.  So I looked around and settled on learning the programming language Rust.
+I am primarily a Python developer.  However, in my professional capacity and in some personal projects, I have been exposed to static, strongly typed languages.  I use Kotlin in developing Android applications but that feels (to me) like a specialized use case.  I have recently begun developing in software that uses the Go programming language and that has lead me to consider the fact that, for some use cases, it makes sense to use a more low level compiled language.  So I wanted to start learning one from the ground up.
 
 ## Why Rust
-I had struggled with the official docs for Golang and Java has been around so long, it wasn't easy to find a canonical source that was also current (and I mostly develop in Android using Kotlin anyway).  I started my programming journey with Python. I fell in love with the ease of Python but equally important was the fun and excitement that was implicit in the docs I read.  I have found that the canonical Rust programming [book][def1] has a similar approach.  Learning new things is/should be fun and I don't want to waste my free time trying to force myself through documentation that makes learning a chore.
+I had struggled with the official docs for Golang. I found the way they were written and presented did not spark my curiousity or make me excited. When I started my programming journey with Python. I fell in love with the ease and readability of the Python language but equally important was the fun and excitement that was implicit in the docs I read.  I have found that the canonical Rust programming [book][def1] has a similar approach and I find the Rust syntax and programming conventions are the most similar to Python in terms of readability.  Learning new things is/should be fun and I don't want to waste my free time trying to force myself through documentation that makes learning a chore.
 
 ## Learning in public
 I like to learn in public by making my notes and thoughts available to anyone online.  It might ever only be for me but it's a practice I'm trying to maintain and get better at.

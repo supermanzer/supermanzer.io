@@ -6,7 +6,7 @@
       </v-col>
       <v-col cols="12" sm="12" md="8" lg="9">
         <v-theme-provider class="" theme="light">
-          <v-card :title="post.title" :subtitle="post.description" class="px-8">
+          <v-card :title="post.title" :subtitle="post.description" class="px-8 py-4">
             <ContentDoc :value="post" />
           </v-card>
         </v-theme-provider>
