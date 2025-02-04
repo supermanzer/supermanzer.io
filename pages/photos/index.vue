@@ -1,10 +1,12 @@
 <template>
   <v-container fluid class="mx-4 fill-height">
     <v-row class="mx-16 my-4">
-      <ContentDoc  />
+      <v-col>
+        <ContentDoc  />
+      </v-col>
     </v-row>
     <v-row class="fill-height">
-      <v-col cols="12" sm="12" md="4" lg="3" class="border-right">
+      <v-col cols="12" sm="12" md="4" lg="3" class="border-right d-none d-md-block">
         <p class="text-h5">Photo Posts</p>
         <PostCard v-for="post in posts" :key="post.id" :post="post" />
       </v-col>
