@@ -1,20 +1,20 @@
-# Nuxt 3 Portfolio 
+# Supermanzer.io
 
-This is a basic attempt to build a portfolio site using Nuxt 3.  
+This is my attempt to build a site using new-to-me technologies that I will use to showcase my projects, interests, and thoughts.
 
-## Getting Started
-I am beginning this [these videos](https://www.youtube.com/watch?v=b6b2yZZNG6Y)
+## Tech 
+I choose my tooling based on what appeals to me in terms of developer experience (DX) and visual styling.  I am in no way expert in any of these but I think this is the best way to practice.
 
-- Current video [here](https://www.youtube.com/watch?v=R0hAI0qUvmk)
+I am building this site using the following tooling/frameworks:
+* [Nuxt](https://nuxt.com/)  - Universal Rendering mode
+* [Vuetify](https://vuetifyjs.com/en/)
+* [Nuxt Content](https://content.nuxt.com/)
+* [Nuxt Image](https://image.nuxt.com/)
+* [Netlify](https://www.netlify.com) - Site hosting & image CDN
 
-### Modifications
-- I installed and am using the Vuetfify visual frameworks using [these steps](https://vuetifyjs.com/en/getting-started/installation/#manual-setup)
-- I am making modifications to bring my portfolio closer to my earlier portfolio [here](https://supermanzer.github.io)
-
-## Blockers
-- I am having issues with GraphQL Nuxt modules
-    - Apollo introduced _a lot_ of package vulnerabilities that I was not able to fix and didn't feel comfortable with
-    - nuxt-graphql-client seems to have issues with SSR apps
-
-### Work Arounds
-- The GraphQL integration showcased in these videos serves as a way to display projects directly from Github respositores.  Since I want to get this portfolio site live _at some point_ I will use my original approach of simply documenting them in Markdown files (the same way I am handling all other content on this site) until I can resolve the issue.
+## Future Plans
+* Implement basic Stripe integrations that also show both client & server side code snippets
+* Continue to build out a more robust photo sharing system
+* Implement a more fully featuring blog and blogging elements
+* Integrate GraphQL for access to Github repos
+ 
