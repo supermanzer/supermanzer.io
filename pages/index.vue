@@ -3,11 +3,10 @@ import { useDisplay } from 'vuetify';
 definePageMeta({
   layout: "home",
 })
-
 const {mobile} = useDisplay()
-const { data: posts } = await useAsyncData("latest-posts", () =>
-  queryContent("blog").where({title:{$ne: 'Blog'}}).sort().limit(3).find()
-)
+
+
+
 </script>
 
 <template>
@@ -22,6 +21,8 @@ const { data: posts } = await useAsyncData("latest-posts", () =>
     </v-row>
     <v-divider class="text-white my-5" />
     <HomeNav />
+
+    <!-- <ContentRenderer v-if="home" :content="home" /> -->
     <BlogLatestsPosts v-if="!mobile" class="bottom-posts" :dark="true" />
   </div>
 </template>

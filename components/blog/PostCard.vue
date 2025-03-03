@@ -13,8 +13,11 @@ defineProps({"post":
 
 <template>
   <v-card :rounded="true" :to="post.path" class="mb-4">
-    <v-list-item lines="three" :title="post.title" :subtitle="post.description">
-      <template v-slot:append>
+    <v-list-item lines="three">
+      <p class="text-h8">{{ post.title }}</p>
+      <v-divider></v-divider>
+      <v-list-item-subtitle class="text-truncate">{{ post.description }}</v-list-item-subtitle>
+      <template v-slot:prepend>
         <v-avatar :rounded="0" size="100">
           <v-img :src="post.meta.img" :alt="post.title" />
         </v-avatar>

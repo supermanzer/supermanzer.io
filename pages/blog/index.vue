@@ -16,9 +16,11 @@
 </template>
 
 <script setup lang="js">
-const {data: posts} = await useAsyncData(() => {
-  return queryCollection('blog').where('title', '!=', 'Blog').all()
-})
+const {data: posts} = await useAsyncData('blog', () => 
+  queryCollection('blog')
+  .order('created_at', 'DESC')
+  .all()
+)
 
 </script>
 

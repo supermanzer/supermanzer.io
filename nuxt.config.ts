@@ -8,7 +8,11 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: "" },
         { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" }
-      ]
+      ],
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scal=1' }
+      ],
+      title: 'Supermanzer.io'
     }
   },
   css: [
@@ -44,19 +48,12 @@ export default defineNuxtConfig({
 
   content: {
     // Nuxt content configuration options
-    // https://content.nuxtjs.org/api/configuration
-    highlight: {
-      theme: {
-        // Default theme (same as single string)
-        default: 'dark-plus',
-        // Theme used if `html.dark`
-        dark: 'night-owl',
-        // Theme used if `html.sepia`
-        sepia: 'monokai'
-      },
-      preload: ['js', 'css', 'python', 'bash', 'vue', 'rust']
-    },
+    // https://content.nuxt.com/docs/getting-started/configuration
     markdown: {
+      toc: {
+        depth: 3,
+        searchDepth: 2
+      },
       anchorLinks: false,
       rehypePlugins: [
         [
@@ -66,7 +63,21 @@ export default defineNuxtConfig({
             rel: 'noopener noreferer'
           }
         ]
-      ]
+      ],
+      highlight: {
+        theme: {
+          // Default theme (same as single string)
+          default: 'dark-plus',
+          // Theme used if `html.dark`
+          dark: 'night-owl',
+          // Theme used if `html.sepia`
+          sepia: 'monokai'
+        },
+        langs: ['js', 'css', 'python', 'bash', 'vue', 'rust']
+      },
+    },
+    preview: {
+      dev: true
     }
   },
 

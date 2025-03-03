@@ -1,6 +1,6 @@
 ---
 title: Writing code to accelerate sharing my photography
-description: How I developed a basic application to parse data from my photo files and power my website development.
+description: Writing software to make it easier to post and share photos on my site.
 img: /img/blog/python.png
 created_at: 2025-01-10
 author:

@@ -7,7 +7,10 @@
       <v-col cols="12" sm="12" md="8" lg="9">
         <v-theme-provider class="" theme="light">
           <v-card :title="post.title" :subtitle="post.description" class="px-8 py-4">
-            <ContentDoc :value="post" />
+            <div>Created: 
+              {{ post.created_at }}
+            </div>
+            <ContentRenderer :value="post" />
           </v-card>
         </v-theme-provider>
       </v-col>
@@ -16,11 +19,13 @@
 </template>
 
 <script setup>
-const { path } = useRoute()
-console.log(path)
-const { data: post } = await useAsyncData(`content-${path}`, () =>
-  queryContent("/blog").where({ _path: path }).findOne()
+const {path, params} = useRoute()
+
+const { data: post } = await useAsyncData(`blog-${params.slug[0]}`, () =>
+  queryCollection("blog").path(path).first()
 )
+
+
 </script>
 
 <style>
