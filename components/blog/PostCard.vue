@@ -12,11 +12,11 @@ defineProps({"post":
 </script>
 
 <template>
-  <v-card :rounded="true" :to="post._path" class="mb-4">
+  <v-card :rounded="true" :to="post.path" class="mb-4">
     <v-list-item lines="three" :title="post.title" :subtitle="post.description">
       <template v-slot:append>
         <v-avatar :rounded="0" size="100">
-          <v-img :src="post.img" :alt="post.title" />
+          <v-img :src="post.meta.img" :alt="post.title" />
         </v-avatar>
       </template>
     </v-list-item>

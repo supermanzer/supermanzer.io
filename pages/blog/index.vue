@@ -4,7 +4,7 @@
       <v-col cols="12" sm="12">
       <p class="text-h2">Blog Posts</p>
       <v-divider class="my-2" />
-      <ContentDoc />
+     
     </v-col>
     </v-row>
     <v-row>
@@ -15,10 +15,10 @@
   </v-container>
 </template>
 
-<script setup>
-const { data: posts } = await useAsyncData("posts", () =>
-  queryContent("blog").where({title:{$ne: 'Blog'}}).find()
-)
+<script setup lang="js">
+const {data: posts} = await useAsyncData(() => {
+  return queryCollection('blog').where('title', '!=', 'Blog').all()
+})
+
 </script>
 
-<style lang="scss" scoped></style>

@@ -1,8 +1,8 @@
 ---
-title: Writing code to accelerate my photography gallery
+title: Writing code to accelerate sharing my photography
 description: How I developed a basic application to parse data from my photo files and power my website development.
 img: /img/blog/python.png
-created: 2025-01-10
+created_at: 2025-01-10
 author:
   name: Ryan Manzer
   description: He puts the Manzer in Supermanzer
