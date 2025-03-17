@@ -21,9 +21,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   runtimeConfig: {
-    graphqlHost: process.env.GQL_HOST,
-    tokenName: process.env.GQL_GITHUB_TOKEN_NAME,
-    tokenValue: process.env.GQL_GITHUB_TOKEN
+    // graphqlHost: process.env.GQL_HOST,
+    // tokenName: process.env.GQL_GITHUB_TOKEN_NAME,
+    // tokenValue: process.env.GQL_GITHUB_TOKEN
+    stripeSK: process.env.STRIPE_SK,
+    public: {
+      stripePK: process.env.STRIPE_PK,
+    }
   },
 
   modules: [
