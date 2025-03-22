@@ -1,9 +1,13 @@
 <template>
   <v-container>
-    <ContentDoc />
+    <ContentRenderer :value="post"/>
   </v-container>
 </template>
 
-<script setup></script>
+<script setup>
 
-<style lang="scss" scoped></style>
+const { data: post } = await useAsyncData('stripe', () =>
+  queryCollection("stripe").first()
+)
+</script>
+

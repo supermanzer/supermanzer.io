@@ -9,7 +9,7 @@ import { md1 } from 'vuetify/blueprints'
 export default defineNuxtPlugin((app) => {
   const vuetify = createVuetify({
     ssr: true,
-    blueprint: md1,
+
   })
   app.vueApp.use(vuetify)
 })

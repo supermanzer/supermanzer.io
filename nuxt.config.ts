@@ -67,7 +67,7 @@ export default defineNuxtConfig({
       highlight: {
         theme: {
           // Default theme (same as single string)
-          default: 'dark-plus',
+          dedefault: 'dark-plus',
           // Theme used if `html.dark`
           dark: 'night-owl',
           // Theme used if `html.sepia`

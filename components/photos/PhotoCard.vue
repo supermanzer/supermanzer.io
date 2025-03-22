@@ -4,8 +4,8 @@
         <template v-slot:activator="{ props: activatorProps }">
             <v-img
               v-bind="activatorProps"
-             :lazy-src="img(photo.src, {width: 10, quality: 50})"
-             :src="img(photo.src, {height: height, quality: 60})"
+             :lazy-src="img(photo.meta.src, {width: 10, quality: 50})"
+             :src="img(photo.meta.src, {height: height, quality: 60})"
              :height="height"
              :alt="photo.description"
              aspect-ratio="4/3"
@@ -16,8 +16,8 @@
 
             <v-card>
                 <v-img
-                :lazy-src="img(photo.src, {width: 10, quality: 50})"
-                :src="photo.src"
+                :lazy-src="img(photo.meta.src, {width: 10, quality: 50})"
+                :src="photo.meta.src"
                 :alt="photo.description"
                 cover
                 ></v-img>
@@ -29,17 +29,17 @@
                     <v-row>
                         <v-col cols="12" sm="12" md="6">
                             <ul>
-                                <li>Captured: {{ photo.details.DateTimeOriginal }}</li>
-                                <li>Camera: {{ photo.details.Model }}</li>
+                                <li>Captured: {{ photo.meta.details.DateTimeOriginal }}</li>
+                                <li>Camera: {{ photo.meta.details.Model }}</li>
                                 <li>Shutter Speed: {{ shutterSpeed }} </li>
                             </ul>
                         </v-col>
                         <v-col cols="12" sm="12" md="6">
                             <ul>
-                                <li>Aperture: f/{{ photo.details.FNumber }}</li>
-                                <li>ISO: {{ photo.details.ISOSpeedRatings }}</li>
-                                <li>Focal Length: {{ photo.details.FocalLength }}mm</li>
-                                <li>Lens: {{ photo.details.LensModel }}</li>
+                                <li>Aperture: f/{{ photo.meta.details.FNumber }}</li>
+                                <li>ISO: {{ photo.meta.details.ISOSpeedRatings }}</li>
+                                <li>Focal Length: {{ photo.meta.details.FocalLength }}mm</li>
+                                <li>Lens: {{ photo.meta.details.LensModel }}</li>
                             </ul>
                         </v-col>
                     </v-row>
@@ -69,7 +69,7 @@ const img = useImage()
 const dialog = ref(false)
 
 const shutterSpeed = computed(() => {
-    return `1/${1/props.photo.details.ExposureTime}s`
+    return `1/${1/props.photo.meta.details.ExposureTime}s`
 })
 
 

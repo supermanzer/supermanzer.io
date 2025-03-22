@@ -22,7 +22,8 @@ export default defineContentConfig({
                     name: z.string(),
                     description: z.string(),
                     image: z.string()
-                })
+                }),
+                projects: z.array(z.string())
             })
         }),
         photos: defineCollection({
@@ -41,5 +42,9 @@ export default defineContentConfig({
             type: 'page',
             source: 'about/**/*.md',
         }),
+        stripe: defineCollection({
+            type: 'page',
+            source: 'stripe/*.md'
+        })
     }
 })

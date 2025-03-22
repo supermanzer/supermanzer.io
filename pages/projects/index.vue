@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12" sm="12" class="mx-8">
-        <ContentDoc />
+        <ContentRenderer :value="doc" />
       </v-col>
       </v-row>
       <v-row justify="space-around" class="my-4">
@@ -14,8 +14,11 @@
 </template>
 
 <script setup>
-const { data: projects } = await useAsyncData("posts", () =>
-  queryContent("projects").where({title:{$ne: 'Projects'}}).find()
+const { data: projects } = await useAsyncData("projects", () => 
+  queryCollection('projects').where('title', "NOT LIKE", "Projects").all()
+)
+const {data: doc} = await useAsyncData("header", () => 
+queryCollection("projects").where('title', "LIKE", 'Projects').first()
 )
 </script>
 
