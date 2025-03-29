@@ -60,8 +60,8 @@ const props = defineProps({
     format: {type: String, required: false, default: "row"}
 })
 const chipStatus = reactive({
-    'bg-green': props.status === 'Complete',
-    'bg-blue': props.status === 'In Progress',
+    'bg-green': props.status === "Complete",
+    'bg-blue': props.status === "In Progress",
     'bg-secondary': ['Planning', 'Not Started'].indexOf(props.status) > -1
 })
 </script>

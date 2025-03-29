@@ -10,12 +10,23 @@ div {
         padding-left: 1.5rem;
     }
 
+    a {
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+    }
+
     h2 {
         margin-top: 0.75em;
+
     }
 
     h3 {
         margin-top: 0.5em;
+    }
+
+    h4 {
+        margin-top: 0.35em;
     }
 
     p {
@@ -25,6 +36,11 @@ div {
     pre {
         padding: 0.2em 0.2em;
     }
+
+    code {
+        text-wrap: wrap;
+    }
+
 }
 
 .border-right {

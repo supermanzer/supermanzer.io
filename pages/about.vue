@@ -1,5 +1,5 @@
 <template>
-    <v-container :fluid="mobile">
+    <v-container :fluid="mobile" class="">
         <PageHeader :title="heading" :subtitle="subheading"/>
         <AboutSection
           v-for="section in sections"
@@ -15,8 +15,8 @@ import { useDisplay } from 'vuetify';
 const heading = 'About Me';
 const subheading = "I'm just this guy, you know?";
 
-const { data: sections } = await useAsyncData("posts", () =>
-  queryContent("about").sort({title:-1}).find()
+const { data: sections } = await useAsyncData("sections", () =>
+  queryCollection("about").order('title', 'DESC').all()
 )
 const {mobile} = useDisplay()
 </script>

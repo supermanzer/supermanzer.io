@@ -8,8 +8,8 @@
     >
         <v-card-title class="text-uppercase d-flex justify-center">
         {{ project.title }}
-        <v-avatar v-if="project.img" size="48px">
-            <v-img :src="project.img"></v-img>
+        <v-avatar v-if="project.meta.img" size="48px">
+            <v-img :src="project.meta.img"></v-img>
         </v-avatar>
         </v-card-title>
         <v-divider></v-divider>
@@ -20,8 +20,8 @@
             
         
             <VersionStatus 
-              :version="project.version" 
-              :status="project.status"
+              :version="project.meta.version" 
+              :status="project.meta.status"
               class="bottom-text"
               />
         </v-card-text>
@@ -33,7 +33,7 @@
                 color="deep-purple accent-4"
                 :bottom="true"
                 nuxt
-                :to="project._path"
+                :to="project.path"
               >
                 Details
             </v-btn>

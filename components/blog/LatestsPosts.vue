@@ -25,7 +25,10 @@ defineProps({
     dark: Boolean
 })
 
-const { data: posts } = await useAsyncData("latest-posts", () =>
-  queryContent("blog").where({title:{$ne: 'Blog'}}).sort({created: -1, $numeric: true}).limit(4).find()
+const { data: posts } = await useAsyncData("blog", () =>
+  queryCollection("blog")
+  .order('created_at', 'DESC')
+  .limit(4)
+  .all()
 )
 </script>
