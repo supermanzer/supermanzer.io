@@ -16,6 +16,7 @@ export default defineNuxtConfig({
     }
   },
   css: [
+    'vuetify/styles',
     '~/assets/styles/main.css'
   ],
   build: {
@@ -46,38 +47,66 @@ export default defineNuxtConfig({
   ],
 
 
+  // content: {
+  //   // Nuxt content configuration options
+  //   // https://content.nuxt.com/docs/getting-started/configuration
+  //   markdown: {
+  //     toc: {
+  //       depth: 3,
+  //       searchDepth: 2
+  //     },
+  //     anchorLinks: false,
+  //     rehypePlugins: [
+  //       [
+  //         'rehype-external-links',
+  //         {
+  //           target: '_blank',
+  //           rel: 'noopener noreferer'
+  //         }
+  //       ]
+  //     ],
+  //     highlight: {
+  //       theme: {
+  //         // Default theme (same as single string)
+  //         dedefault: 'dark-plus',
+  //         // Theme used if `html.dark`
+  //         dark: 'night-owl',
+  //         // Theme used if `html.sepia`
+  //         sepia: 'monokai'
+  //       },
+  //       langs: ['js', 'css', 'python', 'bash', 'vue', 'rust']
+  //     },
+  //   },
+  //   preview: {
+  //     dev: true
+  //   }
+  // },
   content: {
-    // Nuxt content configuration options
-    // https://content.nuxt.com/docs/getting-started/configuration
-    markdown: {
-      toc: {
-        depth: 3,
-        searchDepth: 2
-      },
-      anchorLinks: false,
-      rehypePlugins: [
-        [
-          'rehype-external-links',
-          {
-            target: '_blank',
-            rel: 'noopener noreferer'
-          }
-        ]
-      ],
-      highlight: {
-        theme: {
-          // Default theme (same as single string)
-          dedefault: 'dark-plus',
-          // Theme used if `html.dark`
-          dark: 'night-owl',
-          // Theme used if `html.sepia`
-          sepia: 'monokai'
+    build: {
+      markdown: {
+        toc: {
+          depth: 3,
+          searchDepth: 2
         },
-        langs: ['js', 'css', 'python', 'bash', 'vue', 'rust']
-      },
-    },
-    preview: {
-      dev: true
+        remarkPlugins: {
+          'remark-emoji': {
+            options: {
+              emoticons: true
+            }
+          },
+          'remark-gfm': false,
+        },
+        // rehypePlugins: []
+        highlight: {
+          // theme: 'github-dark', 
+          theme: {
+            default: 'night-owl',
+            dark: 'night-owl',
+            sepia: 'monokai'
+          },
+          langs: ['js', 'python', 'bash', 'vue', 'rust', 'vue-html']
+        }
+      }
     }
   },
 

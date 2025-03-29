@@ -1,20 +1,27 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col cols="12" sm="12" md="4" lg="3">
+      <v-col cols="12" sm="12" md="12" lg="3" order-lg="1" order-md="2" order-sm="2">
         <AuthorCard :author="post.author" header="Author" class="mb-6"/>
 
         <BlogTableOfContents :items="post.body.toc.links" />
       </v-col>
-      <v-col cols="12" sm="12" md="8" lg="9">
-        <v-theme-provider class="" theme="light">
-          <v-card :title="post.title" :subtitle="post.description" class="px-8 py-4">
-            <div>Created: 
-              {{ dateFormat(post.created_at) }}
-            </div>
-            <ContentRenderer :value="post" />
+      <v-col cols="12" sm="12" md="12" lg="9" order-lg="2" order-md="1" order-sm="1">
+        
+          <v-card
+           class="px-8 py-4">
+            <v-card-item>
+              <v-card-title class="text-h3">{{ post.title }}</v-card-title>
+              <v-divider></v-divider>
+              <v-card-subtitle>{{ post.decription }}</v-card-subtitle>
+              <div>Created: 
+                {{ dateFormat(post.created_at) }}
+              </div>
+            </v-card-item>
+            
+            <ContentRenderer :value="post" :prose="true" />
           </v-card>
-        </v-theme-provider>
+        
       </v-col>
     </v-row>
   </v-container>

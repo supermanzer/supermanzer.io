@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-parallax :src="section.parallax_image" height="600">
+        <v-parallax :src="section.meta.parallax_image" height="600">
             <div class="d-flex flex-column fill-height justify-center align-center text-white">
                 <h1 class="text-h1">
                     {{ section.title }}

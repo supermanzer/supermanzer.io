@@ -1,9 +1,16 @@
 <template>
     <p class="text-h2">
-        <slot name="title" />
+       {{ title }}
     </p>
     <v-divider class="my-2" />
     <p> 
-        <slot name="subtitle" />
+       {{ subtitle }}
     </p>
 </template>
+
+<script setup lang="js">
+const props = defineProps({
+    title: {type: String, required: false, default: ""},
+    subtitle: {type: String, required: false, default: ""}
+})
+</script>
