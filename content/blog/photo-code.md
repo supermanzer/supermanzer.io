@@ -1,5 +1,5 @@
 ---
-title: Writing code to accelerate sharing my photography
+title: Coding Solutions for Photography
 description: Writing software to make it easier to post and share photos on my site.
 img: /img/blog/python.png
 created_at: 2025-01-10
