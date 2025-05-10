@@ -29,9 +29,9 @@ export default defineNuxtConfig({
     // graphqlHost: process.env.GQL_HOST,
     // tokenName: process.env.GQL_GITHUB_TOKEN_NAME,
     // tokenValue: process.env.GQL_GITHUB_TOKEN
-    stripeSK: process.env.STRIPE_SK,
+    stripeSK: process.env.STRIPE_SECRET_KEY,
     public: {
-      stripePK: process.env.STRIPE_PK,
+      stripePK: process.env.STRIPE_PUBLISHABLE_KEY,
     }
   },
 
