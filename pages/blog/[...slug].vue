@@ -2,7 +2,7 @@
   <v-container fluid>
     <v-row>
       <v-col cols="12" sm="12" md="12" lg="3" order-lg="1" order-md="2" order-sm="2">
-        <AuthorCard :author="post.author" header="Author" class="mb-6"/>
+        <AuthorCard v-if="post.author !== null" :author="post.author" header="Author" class="mb-6"/>
 
         <BlogTableOfContents :items="post.body.toc.links" />
       </v-col>
