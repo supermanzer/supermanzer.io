@@ -1,0 +1,6 @@
+# Photo Info Configuration
+
+[paths]
+# Paths can be absolute or relative to this config file
+images = "public/img/photos"     # Directory containing images to process
+markdown = "content/photos" # Directory where markdown files will be saved

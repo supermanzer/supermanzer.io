@@ -9,8 +9,11 @@ export default defineNuxtConfig({
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: "" },
         { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" }
       ],
+      script: [
+        {src: "https://js.stripe.com/basil/stripe.js"} // Stripe JS Basil version
+      ],
       meta: [
-        { name: 'viewport', content: 'width=device-width, initial-scal=1' }
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' }
       ],
       title: 'Supermanzer.io'
     }
@@ -21,6 +24,13 @@ export default defineNuxtConfig({
   ],
   build: {
     transpile: ['vuetify'],
+  },
+
+  devServer: {
+    cors: {
+      origin: ['*',]
+    },
+    port: 3333,
   },
 
   devtools: { enabled: true },
@@ -51,40 +61,7 @@ export default defineNuxtConfig({
   ],
 
 
-  // content: {
-  //   // Nuxt content configuration options
-  //   // https://content.nuxt.com/docs/getting-started/configuration
-  //   markdown: {
-  //     toc: {
-  //       depth: 3,
-  //       searchDepth: 2
-  //     },
-  //     anchorLinks: false,
-  //     rehypePlugins: [
-  //       [
-  //         'rehype-external-links',
-  //         {
-  //           target: '_blank',
-  //           rel: 'noopener noreferer'
-  //         }
-  //       ]
-  //     ],
-  //     highlight: {
-  //       theme: {
-  //         // Default theme (same as single string)
-  //         dedefault: 'dark-plus',
-  //         // Theme used if `html.dark`
-  //         dark: 'night-owl',
-  //         // Theme used if `html.sepia`
-  //         sepia: 'monokai'
-  //       },
-  //       langs: ['js', 'css', 'python', 'bash', 'vue', 'rust']
-  //     },
-  //   },
-  //   preview: {
-  //     dev: true
-  //   }
-  // },
+  
   content: {
     build: {
       markdown: {
@@ -137,6 +114,11 @@ export default defineNuxtConfig({
           api: 'modern-compiler'
         }
       },
+    }
+  },
+  vue: {
+    compilerOptions: {
+      isCustomElement: (tag) => tag.startsWith('stripe-'),
     }
   },
 
