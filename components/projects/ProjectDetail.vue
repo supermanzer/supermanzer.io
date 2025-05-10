@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card class="mx-auto" elevation="">
+        <v-card class="mx-auto" elevation="4">
             <v-img 
             v-if="project.meta.banner"
             :src="project.meta.banner"
