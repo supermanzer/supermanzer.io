@@ -3,6 +3,7 @@ title: Coding Solutions for Photography
 description: Writing software to make it easier to post and share photos on my site.
 img: /img/blog/python.png
 created_at: 2025-01-10
+udated_at: 2025-04-20
 author:
   name: Ryan Manzer
   description: He puts the Manzer in Supermanzer
@@ -43,3 +44,6 @@ Once I had decided I should code my own solution for the problem I was facing I 
 Thankfully the most popular Python library for handling images, <a href="https://pypi.org/project/pillow/">Pillow<a>, has the ability to read Exif tags and parse them out.  Once I found that, I was able to quickly stitch together a script to handle this for me.  I wrote this specifically for the way my site handles content so many of the details are hard-coded.  I do intend to make it more general purpose through some configuration values that I, or anyone else, could set.  If you, dear reader, want to make use of this application you will likely need to modify the code somewhat.  However, please feel free to take it for a spin.
 
 You can find the code [here](https://github.com/supermanzer/photo-info).  As I mentioned above, this is currently written in Python (my love language).  However, it strikes me that this kind of processing might be something I could re-write in Rust!
+
+## Update
+I spent a little more time working on this and, while it's still not published to PyPI...yet, I think it's at a point where it's really useful.  I've built it out as a feature complete Command Line Application including `--help` flags and other useful commands.  In fact, this has come so far I decided to add it to my [Projects](/projects).
