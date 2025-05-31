@@ -16,5 +16,5 @@ I am building this site using the following tooling/frameworks:
 * Implement basic Stripe integrations that also show both client & server side code snippets
 * Continue to build out a more robust photo sharing system
 * Implement a more fully featuring blog and blogging elements
-* Integrate GraphQL for access to Github repos
+
  
