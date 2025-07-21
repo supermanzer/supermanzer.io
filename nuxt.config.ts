@@ -10,7 +10,7 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" }
       ],
       script: [
-        {src: "https://js.stripe.com/basil/stripe.js"} // Stripe JS Basil version
+        { src: "https://js.stripe.com/basil/stripe.js" } // Stripe JS Basil version
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -33,7 +33,13 @@ export default defineNuxtConfig({
     port: 3333,
   },
 
-  devtools: { enabled: true },
+  devtools: {
+    enabled: true,
+    vscode: {
+      reuseExistingServer: true,
+      port: 3090
+    }
+  },
 
   runtimeConfig: {
     // graphqlHost: process.env.GQL_HOST,
@@ -61,7 +67,7 @@ export default defineNuxtConfig({
   ],
 
 
-  
+
   content: {
     build: {
       markdown: {

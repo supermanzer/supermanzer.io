@@ -1,13 +1,13 @@
 <template>
   <v-container>
-    <ContentRenderer :value="post"/>
+    <ContentRenderer :value="posts[0]"/>
   </v-container>
 </template>
 
 <script setup>
 
-const { data: post } = await useAsyncData('stripe', () =>
-  queryCollection("stripe").first()
+const { data: posts } = await useAsyncData('stripe', () =>
+  queryCollection("stripe").all()
 )
 </script>
 

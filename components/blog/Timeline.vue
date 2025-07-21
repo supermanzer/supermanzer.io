@@ -19,7 +19,7 @@ const props = defineProps({
       line-color="#aeaeae" 
       class="w-100"
     >
-        <v-timeline-item v-for="post in posts" :key="post.id" class="w-100">
+        <v-timeline-item v-for="post in posts" :key="post.id" class="w-100" dot-color="white">
                 <template v-slot:icon>
                     <v-avatar :image="post.meta.img"></v-avatar>
                 </template>

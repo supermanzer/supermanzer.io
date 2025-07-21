@@ -18,6 +18,7 @@ logs
 .fleet
 .idea
 .vscode
+.mcp.json
 
 # Local env files
 .env

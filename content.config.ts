@@ -33,6 +33,32 @@ export default defineContentConfig({
                 exclude: ['photos/index.md'],
                 prefix: '/photos'
             },
+            schema: z.object({
+                title: z.string(),
+                description: z.string(),
+                src: z.string(),
+                collections: z.array(z.string()).optional(),
+                details: z.object({
+                    DateTimeOriginal: z.string(),
+                    Make: z.string(),
+                    Model: z.string(),
+                    ExposureBiasValue: z.number(),
+                    FocalLength: z.number(),
+                    ExposureTime: z.number(),
+                    FNumber: z.number(),
+                    ISOSpeedRatings: z.number(),
+                    LensMake: z.string(),
+                    LensModel: z.string(),
+                })
+            }),
+        }),
+        albums: defineCollection({
+            type: 'page',
+            source: {
+                include: 'photos/**/*.md',
+                exclude: ['photos/*.md'],
+                prefix: '/albums'
+            }
         }),
         projects: defineCollection({
             type: 'page',

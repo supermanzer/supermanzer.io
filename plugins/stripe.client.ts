@@ -11,9 +11,10 @@ declare global {
   }
 }
 
-// const runtimeConfig = useRuntimeConfig()
+
 export default defineNuxtPlugin((nuxtApp) => {
-    const PK = 'pk_test_51JticYIlCeH6bP8REulC9GlUO09hWuGsCljwJ3VNWhqqLmTTW0CedWXOoABWyXkplmqMtwfA4SiXkdeqCMvesIii00BCpJb9Vb'
-    const stripe = window.Stripe(PK)
-    nuxtApp.provide('stripe', stripe)
+  const runtimeConfig = useRuntimeConfig()
+  const PK = runtimeConfig.public.stripePK
+  const stripe = window.Stripe(PK)
+  nuxtApp.provide('stripe', stripe)
 })
