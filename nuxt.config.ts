@@ -10,7 +10,16 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" }
       ],
       script: [
-        { src: "https://js.stripe.com/basil/stripe.js" } // Stripe JS Basil version
+        { src: "https://js.stripe.com/basil/stripe.js" }, // Stripe JS Basil version
+        { src: 'https://www.googletagmanager.com/gtag/js?id=G-XWSPQV1JL1', async: true },
+        {
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XWSPQV1JL1');
+          `
+        }
       ],
       meta: [
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
