@@ -13,24 +13,24 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "2.5.0",
-    "@nuxt/eslint": "1.4.1",
+    "@nuxt/eslint": "^1.8.0",
     "@pinia/nuxt": "0.11.1",
-    "nuxt": "3.17.5",
+    "nuxt": "^4.0.3",
     "nuxt-icon": "0.6.10",
     "sass": "1.89.2",
     "sass-loader": "^16.0.3",
     "typescript": "5.8.3",
-    "vite-plugin-vuetify": "2.1.1",
-    "vuetify": "3.8.10"
+    "vite-plugin-vuetify": "2.1.2",
+    "vuetify": "3.9.4"
   },
   "dependencies": {
     "@mdi/font": "^7.3.67",
-    "@nuxt/content": "3.6.3",
+    "@nuxt/content": "^2.7.2",
     "@nuxt/image": "^1.0.0",
     "@stripe/stripe-js": "7.5.0",
     "better-sqlite3": "12.2.0",
     "g": "^2.0.1",
-    "netlify-cli": "22.3.0",
+    "netlify-cli": "^1.2.3",
     "nuxt-graphql-client": "0.2.46",
     "pinia": "3.0.3",
     "stripe": "18.3.0"
