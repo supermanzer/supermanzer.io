@@ -23,7 +23,7 @@ const {mobile} = useDisplay()
     <HomeNav />
 
     <!-- <ContentRenderer v-if="home" :content="home" /> -->
-    <BlogLatestsPosts v-if="!mobile" class="bottom-posts" :dark="true" />
+    <BlogLatestPosts v-if="!mobile" class="bottom-posts" :dark="true" />
   </div>
 </template>
 
