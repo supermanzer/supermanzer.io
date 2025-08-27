@@ -6,11 +6,6 @@
         </v-card-text>
         <v-card-actions>
             <v-row class="my-5" justify="space-around">
-                <v-btn
-                    class="indigo-accent-4"
-                    @click="getClientSecret"
-                    text="Client Secret"
-                />
                 <v-btn 
                   class="light-blue-accent-4"
                   @click="loadElement"

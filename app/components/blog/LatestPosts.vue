@@ -25,10 +25,10 @@ defineProps({
     dark: Boolean
 })
 
-const { data: posts } = await useAsyncData("blog", () =>
-  queryCollection("blog")
+const { data: posts, status, error } = await useAsyncData("blog-posts", () => {
+  return queryCollection("blog")
   .order('created_at', 'DESC')
   .limit(4)
   .all()
-)
+})
 </script>

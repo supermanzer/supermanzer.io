@@ -25,9 +25,9 @@ Since I am building this site using [Nuxt 3](https://nuxt.com), I provide an ins
 ```javascript
 // stripe.client.js - Nuxt plugin
 export default defineNuxtPlugin((nuxtApp) => {
-    const PK = 'STRIPE_PUBLIC_KEY'
-    const stripe = window.Stripe(PK)
-    nuxtApp.provide('stripe', stripe)
+    config = useRuntimeConfig() // Nuxt composable to get access to app configuration - this loads the PK from ENV variables
+    const stripe = window.Stripe(config.PK) // initialize Stripe.js with my Publishable Key
+    nuxtApp.provide('stripe', stripe) // Inject into the App context.  This can now be used as $stripe anywhere
 })
 ```
 
@@ -99,7 +99,7 @@ const confirmIntent = async() => {
 ## Node.js - Server Side
 
 ```javascript
-const body = await readBody(event);
+const body = await readBody(event); 
 
 const intent = await stripe.paymentIntents.create({
     amount: body.amount,
