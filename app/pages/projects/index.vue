@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12" sm="12" class="mx-8">
-        <ContentRenderer :value="doc" />
+        <PageHeader :title="title" :subtitle="subtitle" />
       </v-col>
       </v-row>
       <v-row justify="space-around" class="my-4">
@@ -20,6 +20,7 @@ const { data: projects } = await useAsyncData("projects", () =>
 const {data: doc} = await useAsyncData("header", () => 
 queryCollection("projects").where('title', "LIKE", 'Projects').first()
 )
-</script>
 
-<style lang="scss" scoped></style>
+const title = 'My Projects'
+const subtitle = 'I like building things'
+</script>

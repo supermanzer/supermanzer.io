@@ -1,5 +1,54 @@
 @use 'vuetify' with ($font-size-root: 18px,
     $body-font-family: 'Raleway',
     $heading-font-family: 'Montserrat',
-    // $reset: false,
-)
+);
+@use 'variables' as vars;
+@use './content.scss';
+
+div {
+    line-height: vars.$line-height;
+
+    ul,
+    ol {
+        padding-left: vars.$padding-left;
+    }
+
+    a {
+        text-decoration: none;
+        color: vars.$text-color;
+        font-weight: vars.$font-weight-medium;
+    }
+
+    h2 {
+        margin-top: vars.$margin-top-large;
+    }
+
+    h3 {
+        margin-top: vars.$margin-top-medium;
+    }
+
+    h4 {
+        margin-top: vars.$margin-top-small;
+    }
+
+    p {
+        margin-top: vars.$margin-top-small;
+    }
+
+    pre {
+        padding: 0.2em 0.2em;
+    }
+
+    code {
+        text-wrap: wrap;
+    }
+
+    &.v-card-text {
+        // Style v-card-text here
+        margin: vars.$margin;
+    }
+}
+
+.border-right {
+    border-right: 1px solid vars.$border-color;
+}

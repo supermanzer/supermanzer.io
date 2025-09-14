@@ -1,9 +1,11 @@
+@use 'variables' as vars;
+
 div.v-card-text {
     margin: 1em 1em;
 
 }
 
 h2 {
-    margin: 1em;
-    color: red;
+    // margin: vars.$margin;
+    color: vars.$red;
 }

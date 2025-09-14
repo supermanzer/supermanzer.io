@@ -70,7 +70,7 @@ export default defineContentConfig({
         }),
         stripe: defineCollection({
             type: 'page',
-            source: 'stripe/*.md'
-        })
+            source: 'stripe/**/*.md',
+        }),
     }
 })

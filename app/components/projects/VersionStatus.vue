@@ -3,13 +3,13 @@
         <v-col cols="12" sm="12" md="5" class="d-flex justify-space-around mx-0 px-0">
             Version: <code>{{ version }}</code> 
         </v-col>
-        <v-col cols="12" sm="12" md="7" class="d-flex justify-space-around mx-0 px-0">
+        <v-col cols="12" sm="12" md="7" class="d-flex mx-0 px-0">
             Status: 
             <v-chip density="compact" rounded="xs" elevation="1" :class="chipStatus">
                 {{ status }}
                 <v-bottom-sheet>
                     <template v-slot:activator="{props}">
-                        <v-icon v-bind="props" icon="mdi-information"></v-icon>
+                        <v-icon v-bind="props" icon="mdi-information" class=""></v-icon>
                     </template>
                     <v-card class="pa-4 pb-10">
                         <v-card-title>
@@ -60,9 +60,9 @@ const props = defineProps({
     format: {type: String, required: false, default: "row"}
 })
 const chipStatus = reactive({
-    'bg-green': props.status === "Complete",
-    'bg-blue': props.status === "In Progress",
-    'bg-secondary': ['Planning', 'Not Started'].indexOf(props.status) > -1
+    'bg-green ml-4': props.status === "Complete",
+    'bg-blue ml-4': props.status === "In Progress",
+    'bg-secondary ml-4': ['Planning', 'Not Started'].indexOf(props.status) > -1
 })
 </script>
 

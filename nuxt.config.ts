@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
   css: [
     'vuetify/styles',
-    '~/assets/styles/main.css'
+    '~/assets/styles/main.scss'
   ],
   build: {
     transpile: ['vuetify'],
@@ -97,9 +97,14 @@ export default defineNuxtConfig({
             dark: 'night-owl',
             sepia: 'monokai'
           },
-          langs: ['js', 'python', 'bash', 'vue', 'rust', 'vue-html']
+          langs: ['javascript', 'python', 'bash', 'vue', 'rust', 'vue-html']
         }
       }
+    },
+    watch: {
+      enabled: true,
+      port: 4000,
+      showURL: false,
     }
   },
 
@@ -123,7 +128,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          api: 'modern-compiler'
+          // api: 'modern-compiler'
         }
       },
     }

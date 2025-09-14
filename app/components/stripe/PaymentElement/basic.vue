@@ -2,7 +2,9 @@
     <v-card>
         <v-alert v-model="data.alert.show" :type="data.alert.type" :text="data.alert.text" closable />
         <v-card-text>
-            <div id="payment" class="my-8"></div>
+            <div id="payment" class="my-8">
+                <p>Payment Element loads here</p>
+            </div>
         </v-card-text>
         <v-card-actions>
             <v-row class="my-5" justify="space-around">
@@ -10,7 +12,7 @@
                   class="light-blue-accent-4"
                   @click="loadElement"
                   text="Load Element"
-                  :disabled="data.clientSecret == null"
+                  :disabled="data.clientSecret != null"
                 />
                 <v-btn 
                   class="green-accent-4"
@@ -45,7 +47,7 @@ const paymentData = {
 }
 
 onMounted( async() => {
-    loadElement()
+    // loadElement()
 });
 
 const loadElement = async () => {

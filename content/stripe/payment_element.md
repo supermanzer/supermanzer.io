@@ -1,6 +1,6 @@
 ---
 title: Payment Element
-description: A basic integration using the Stripe Payment ELement
+description: A basic integration using the Stripe Payment Element
 documentation_url: https://docs.stripe.com/payments/payment-element
 ---
 

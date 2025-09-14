@@ -2,7 +2,12 @@
     <v-container>
         <v-card>
             <v-card-title class="text-h3">Stripe - {{ example.title }}</v-card-title>
-            <v-card-subtitle>{{ example.description }}</v-card-subtitle>
+            <v-card-subtitle>
+                <v-row justify="space-around" class="my-4">
+                    {{ example.description }}
+                    <StripeDocsLink :url="example.meta.documentation_url" />
+                </v-row>
+            </v-card-subtitle>
             <v-card-text>
                 <component :is="component" />
                 <ContentRenderer :value="example" />
