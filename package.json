@@ -27,6 +27,7 @@
     "@mdi/font": "^7.3.67",
     "@nuxt/content": "3.6.3",
     "@nuxt/image": "^1.0.0",
+    "@nuxtjs/seo": "^3.1.0",
     "@stripe/stripe-js": "7.9.0",
     "better-sqlite3": "12.2.0",
     "g": "^2.0.1",

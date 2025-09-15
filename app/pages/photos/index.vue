@@ -16,16 +16,7 @@
         </div>
       </v-col>
       <v-col cols="12" sm="12" order-md="1" md="12" order-lg="1" lg="9" class="pl-4">
-        <p class="text-h6">Collections</p>
-        <v-row class="my-2 mx-8">
-          <v-chip 
-            v-for="collection in uniqueCollections" 
-            color="indigo-accent-2"
-            v-text="collection"
-            @click="selectedCollection = collection === selectedCollection ? null : collection"
-          />
-          <p>{{ selectedCollection }}</p>
-        </v-row>
+        
         <p class="text-h5">Individual Photos</p>
         <v-row>
           <v-col cols="12" sm="6" md="4" lg="3" v-for="photo in photos" :key="photo.id">

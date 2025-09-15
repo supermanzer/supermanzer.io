@@ -3,6 +3,7 @@ title: Tracking usage of Supermanzer.io
 description: Dipping my toe into the world of measuring the use of a public website
 img: /img/blog/analytics.png
 created_at: 2025-09-06
+updated_at: 2025-09-14
 author:
   name: Ryan Manzer
   description: He puts the Manzer in Supermanzer
@@ -43,6 +44,12 @@ This made perfect sense to me though.  I had made very very little effort to pub
 
 First, I need to watch some Youtube videos and go through some tutorials on Google Analytics.  I'm starting to get data that I'm curious about and I think there is more I can learn about how the few users I do see are engaging with my site.  Second, I will start to put a little effort into making the site easier to find.  I've noticed that Google is attempting to index pages that don't exist so I think publishing a sitemap would help.  Additionally, one of the selling points of Nuxt's Server Side Rendering (SSR) mode is good Search Engine Optimization (SEO) since the crawlers reading your site get the actual content.  I will spend a little more time understanding how I can make it easier for people to find my stuff.
 
+### Update (9/14/2025)
+- Sitemap ✅
+- robots.txt ✅
+
+Turns out [NuxtSEO][def8] makes all of this pretty easy to get started with!
+
 Once I have that in place, well then the pressure is really on!  If I make it easy for people to find my site, I better start putting up stuff that they will find useful, funny, engaging.  I may need to look into more interactive elements and ways to gather feedback. This entire blogging framework is built on markdown files using [Nuxt Content][def5] so I'm not sure if/how I could enable comments.  Also, I don't know if that's the way I want to get engagement.  Have you seen some of the stuff that gets posted in comment sections?  😬
 
 One thing that I will **NOT** be doing is turning this site into a wall of banner ads or using nefarious cookies to track your traffic across the web.  I think those are gross misuses of a technology that was, at least partially, designed to bring us together through voluntarily sharing of information.  I do plan to make use of cookies but for things that pertain to this site.  I want to implement good looking light/dark modes and allow users to configure one as their default.  I want to build out a complex Stripe integration using [Active Entitlements][def6] and a basic [Nuxt Middleware][def7] implementation.  These will be website cookies that enable functionality on this site and help me explain concepts I find interesting.  I look forward to implementing those and collecting consent for any user of your browser storage.
@@ -56,3 +63,4 @@ I hope we can all continue to build things that excite and delight us, making th
 [def5]: https://content.nuxt.com
 [def6]: https://docs.stripe.com/billing/entitlements
 [def7]: https://nuxt.com/docs/4.x/guide/directory-structure/app/middleware
+[def8]: https://nuxtseo.com/

@@ -70,10 +70,19 @@ export default defineNuxtConfig({
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
+    '@nuxtjs/seo'
   ],
 
+  // Using Nuxt config to define what pages to allow/prohibit indexing
+  // https://nuxtseo.com/docs/robots/guides/nuxt-config
+  robots: {
+    disallow: ['*localhost*'],
 
-
+  },
+  site: {
+    url: 'https://supermanzer.io',
+    name: "Supermanzer"
+  },
   content: {
     build: {
       markdown: {
