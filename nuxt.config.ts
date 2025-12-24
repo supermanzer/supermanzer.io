@@ -113,9 +113,9 @@ export default defineNuxtConfig({
     watch: {
       enabled: true,
     },
-    experimental: {
-      sqliteConnector: 'better-sqlite3'
-    }
+    // experimental: {
+    //   sqliteConnector: 'better-sqlite3'
+    // }
   },
 
   image: {
