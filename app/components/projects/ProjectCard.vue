@@ -1,6 +1,6 @@
 <template>
     <v-card
-        :dark="false"
+        
         :elevation="3"
         :min-width="300"
         :min-height="400"

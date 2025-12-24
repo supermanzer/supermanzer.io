@@ -10,7 +10,6 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" }
       ],
       script: [
-        { src: "https://js.stripe.com/basil/stripe.js" }, // Stripe JS Basil version
         { src: 'https://www.googletagmanager.com/gtag/js?id=G-XWSPQV1JL1', async: true },
         {
           innerHTML: `
@@ -58,9 +57,10 @@ export default defineNuxtConfig({
   },
 
   modules: [
+    '@vueuse/nuxt',
     '@nuxt/content',
+    '@nuxt/icon',
     '@nuxt/image',
-    'nuxt-icon',
     '@nuxt/eslint',
     // 'nuxt-graphql-client',
     '@pinia/nuxt',
@@ -112,8 +112,9 @@ export default defineNuxtConfig({
     },
     watch: {
       enabled: true,
-      port: 4000,
-      showURL: false,
+    },
+    experimental: {
+      sqliteConnector: 'better-sqlite3'
     }
   },
 

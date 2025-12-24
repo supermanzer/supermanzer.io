@@ -18,7 +18,6 @@ export const useNavStore = defineStore('navStore', {
             { name: "Blog", href: "/blog", active: false },
             { name: "Projects", href: "/projects", active: false },
             { name: "Photos", href: "/photos", active: false },
-            { name: "Stripe", href: "/stripe", active: false },
         ]
     }),
     getters: {

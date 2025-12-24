@@ -1,8 +1,13 @@
 <script setup>
 import { useNavStore } from '@/stores/nav';
+import { useTheme } from 'vuetify';
+import { useLocalStorage } from '@vueuse/core';
+
 const route = useRoute()
 const drawer = useState("drawer", () => false)
 const title = "Supermanzer.io"
+
+
 
 const navigationStore = useNavStore()
 const navigationItems = navigationStore.getLinks
@@ -52,10 +57,10 @@ const classObject = reactive({
           :key="item.name"
           :href="item.href"
           :active="item.active"
-        >
-          {{ item.name }}
-        </v-btn>
+          :text="item.name"
+        />
       </v-toolbar-items>
+      
     </v-toolbar>
   </div>
 </template>
