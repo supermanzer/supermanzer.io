@@ -26,19 +26,19 @@ const classObject = reactive({
 
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" temporary>
-      <v-list-item title="Supermanzer.io" subtitle="Site of Supermanzer" />
-      <v-divider />
-      <v-list-item
-        v-for="item in navigationItems"
-        :key="item.name"
-        :href="item.href"
-        :active="item.active"
-      >
-        {{ item.name }}
-      </v-list-item>
-    </v-navigation-drawer>
-
+ 
+      <v-navigation-drawer v-model="drawer" temporary>
+        <v-list-item title="Supermanzer.io" subtitle="Site of Supermanzer" />
+        <v-divider />
+        <v-list-item
+          v-for="item in navigationItems"
+          :key="item.name"
+          :href="item.href"
+          :active="item.active"
+        >
+          {{ item.name }}
+        </v-list-item>
+      </v-navigation-drawer>
 
     <v-toolbar prominent :class="classObject" :order="-1" elevation="2">
       <v-app-bar-nav-icon

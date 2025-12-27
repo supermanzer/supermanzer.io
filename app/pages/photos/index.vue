@@ -41,6 +41,11 @@ const {data: photos} = await useAsyncData(
       return dateB.localeCompare(dateA);
     })
   )
+  if (photos === undefined) {
+    console.log("PHOTOS UNDEFINED");
+  } else {
+    console.log("RECEIVED PHOTOS: ", photos.length);
+  }
   return photos
 })
 

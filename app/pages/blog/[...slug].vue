@@ -11,7 +11,7 @@
           <v-card
            class="px-8 py-4">
             <v-card-item>
-              <v-card-title class="text-h3">{{ post.title }}</v-card-title>
+              <v-card-title class="text-h4 text-wrap">{{ post.title }}</v-card-title>
               <v-divider></v-divider>
               <v-card-subtitle>{{ post.decription }}</v-card-subtitle>
               <div>Created: 

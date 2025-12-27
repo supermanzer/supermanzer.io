@@ -18,6 +18,8 @@ const {data: posts} = await useAsyncData('blog', () =>
   .order('created_at', 'DESC')
   .all()
 )
+const num_posts = posts.length
+console.log(`========GOT ${num_posts} BLOG POSTS========`)
 
 </script>
 
