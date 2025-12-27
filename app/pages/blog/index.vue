@@ -13,12 +13,10 @@
 </template>
 
 <script setup lang="js">
-const {data: posts} = await useAsyncData('blog', () => 
-  queryCollection('blog')
-  .order('created_at', 'DESC')
-  .all()
-)
-const num_posts = posts.length
+const {data: posts} = await useContentQuery({
+  order: { field: 'created_at', direction: 'DESC' }
+})
+const num_posts = posts.value?.length || 0
 console.log(`========GOT ${num_posts} BLOG POSTS========`)
 
 </script>

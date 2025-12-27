@@ -28,11 +28,7 @@
 </template>
 
 <script setup>
-const {path, params} = useRoute()
-
-const { data: post } = await useAsyncData(`blog-${params.slug[0]}`, () =>
-  queryCollection("blog").path(path).first()
-)
+const { data: post } = await useContentItem()
 </script>
 
 <style>

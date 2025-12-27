@@ -13,7 +13,6 @@ I am building this site using the following tooling/frameworks:
 * [Netlify](https://www.netlify.com) - Site hosting & image CDN
 
 ## Future Plans
-* Implement basic Stripe integrations that also show both client & server side code snippets
 * Continue to build out a more robust photo sharing system
 * Implement a more fully featuring blog and blogging elements
 

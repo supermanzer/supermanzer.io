@@ -14,12 +14,9 @@
 </template>
 
 <script setup>
-const { data: projects } = await useAsyncData("projects", () => 
-  queryCollection('projects').where('title', "NOT LIKE", "Projects").all()
-)
-const {data: doc} = await useAsyncData("header", () => 
-queryCollection("projects").where('title', "LIKE", 'Projects').first()
-)
+const { data: projects } = await useContentQuery({
+  where: [{ field: 'title', operator: 'NOT LIKE', value: 'Projects' }]
+})
 
 const title = 'My Projects'
 const subtitle = 'I like building things'

@@ -30,36 +30,21 @@
 
 <script setup>
 
-const selectedCollection = ref(null)
-
-const {data: photos} = await useAsyncData(
-  "photos", () => {  
-  const photos = queryCollection("photos").all().then(photos =>
-    photos.sort((a,b) => {
+const {data: photos} = await useContentQuery({
+  transform: (data) => {
+    const sorted = data.sort((a,b) => {
       const dateA = a.details?.DateTimeOriginal ?? "";
       const dateB = b.details?.DateTimeOriginal ?? "";
       return dateB.localeCompare(dateA);
     })
-  )
-  if (photos === undefined) {
-    console.log("PHOTOS UNDEFINED");
-  } else {
-    console.log("RECEIVED PHOTOS: ", photos.length);
+    console.log("RECEIVED PHOTOS: ", sorted.length);
+    return sorted
   }
-  return photos
 })
 
-const {data: albums} = await useAsyncData("collections", () => 
-  queryCollection("photos").where('collections', "IS NOT NULL").all()
-)
-
-const {data: posts} = await useAsyncData("posts", () =>
-  queryCollection("blog").where('projects', 'LIKE', '%photos%').all()
-)
-
-const uniqueCollections = computed(() => {
-  if(!albums.value) return []
-  return [...new Set(albums.value.flatMap(album => album.collections))]
+const {data: posts} = await useContentQuery({
+  collection: 'blog',
+  where: [{ field: 'projects', operator: 'LIKE', value: '%photos%' }]
 })
 </script>
 

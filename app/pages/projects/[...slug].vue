@@ -7,15 +7,5 @@
 </template>
 
 <script setup lang="js">
-const { path } = useRoute()
-
-const { data: project } = await useAsyncData(`content-${path}`, () =>
-  queryCollection("projects").path(path).first()
-)
-
-
+const { data: project } = await useContentItem()
 </script>
-
-<style scoped>
-
-</style>
