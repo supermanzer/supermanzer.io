@@ -1,17 +1,15 @@
 <script setup>
-import { useNavStore } from '@/stores/nav';
 import { useTheme } from 'vuetify';
 import { useLocalStorage } from '@vueuse/core';
 
 const route = useRoute()
+const {links} = useNav();
 const drawer = useState("drawer", () => false)
 const title = "Supermanzer.io"
 
 
 
-const navigationStore = useNavStore()
-const navigationItems = navigationStore.getLinks
-navigationStore.updateActive(route.name)
+
 
 const props = defineProps({
   showLinks: { type: Boolean, required: false, default: true },
@@ -21,7 +19,6 @@ const props = defineProps({
 const classObject = reactive({
   'transparent': props.transparent
 })
-
 </script>
 
 <template>
@@ -31,7 +28,7 @@ const classObject = reactive({
         <v-list-item title="Supermanzer.io" subtitle="Site of Supermanzer" />
         <v-divider />
         <v-list-item
-          v-for="item in navigationItems"
+          v-for="item in links"
           :key="item.name"
           :href="item.href"
           :active="item.active"
@@ -53,7 +50,7 @@ const classObject = reactive({
 
       <v-toolbar-items v-if="props.showLinks" class="d-none d-md-flex">
         <v-btn
-          v-for="item in navigationItems"
+          v-for="item in links"
           :key="item.name"
           :href="item.href"
           :active="item.active"

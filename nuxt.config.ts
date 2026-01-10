@@ -63,7 +63,6 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/eslint',
     // 'nuxt-graphql-client',
-    '@pinia/nuxt',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error some sort of something or other

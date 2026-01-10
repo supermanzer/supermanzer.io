@@ -1,17 +1,15 @@
 
 
 <script setup>
-import {useNavStore} from '@/stores/nav'
+const {links} = useNav();
 
-const navigationStore = useNavStore()
 
-const navigationItems = navigationStore.getLinks
 </script>
 
 <template>
   <v-row align="center" justify="center" class="shaded">
     <v-col
-      v-for="(item, i) in navigationItems"
+      v-for="(item, i) in links"
       :key="i"
       class="px-4"
       cols="12"
