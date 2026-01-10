@@ -113,9 +113,6 @@ export default defineNuxtConfig({
     watch: {
       enabled: true,
     },
-    // experimental: {
-    //   sqliteConnector: 'better-sqlite3'
-    // }
   },
 
   image: {
@@ -145,7 +142,7 @@ export default defineNuxtConfig({
   },
   vue: {
     compilerOptions: {
-      isCustomElement: (tag) => tag.startsWith('stripe-'),
+      isCustomElement: (tag: string) => tag.startsWith('stripe-'),
     }
   },
 

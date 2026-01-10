@@ -30,7 +30,6 @@
     "@nuxt/content": "3.9.0",
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/seo": "^3.3.0",
-    "better-sqlite3": "12.5.0",
     "g": "^2.0.1",
     "netlify-cli": "23.13.0",
     "pinia": "3.0.4"
