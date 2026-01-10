@@ -15,12 +15,10 @@
     "@nuxt/devtools": "3.1.1",
     "@nuxt/eslint": "1.12.1",
     "@nuxt/icon": "^2.1.1",
-    "@pinia/nuxt": "0.11.3",
+    "@pinia/nuxt": "^0.10.0",
     "@vueuse/core": "^14.1.0",
     "@vueuse/nuxt": "^14.1.0",
     "nuxt": "^4.2.2",
-    "sass": "1.97.1",
-    "sass-loader": "^16.0.6",
     "typescript": "5.9.3",
     "vite-plugin-vuetify": "2.1.2",
     "vuetify": "3.11.4"
@@ -30,12 +28,8 @@
     "@nuxt/content": "3.9.0",
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/seo": "^3.3.0",
-    "g": "^2.0.1",
-    "netlify-cli": "23.13.0",
+    "better-sqlite3": "^12.6.0",
     "pinia": "3.0.4"
-  },
-  "overrides": {
-    "vue": "^3.5.10"
   },
   "engines": {
     "node": ">=24.12.0"
