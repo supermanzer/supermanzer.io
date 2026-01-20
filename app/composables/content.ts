@@ -32,6 +32,8 @@
  * })
  */
 
+import type { RouteLocationNormalizedLoadedGeneric } from "vue-router"
+
 interface WhereCondition {
     field: string
     operator: string
@@ -75,43 +77,60 @@ interface ContentQueryOptions {
 
 interface ContentItemOptions {
     collection?: string
-    path?: string
+    path?: string,
+    before?: number,
+    after?: number
+}
+
+const getCollectionFromRoute = (route): string => {
+    const routeName = route.name?.toString() || ''
+    if (routeName.startsWith('blog')) return 'blog'
+    if (routeName.startsWith('photos')) return 'photos'
+    if (routeName.startsWith('projects')) return 'projects'
+    return 'content'
 }
 
 export const useContentItem = (options: ContentItemOptions = {}) => {
     const route = useRoute()
 
-    // Extract collection name from route (e.g., 'blog', 'photos', 'projects')
-    const getCollectionFromRoute = (): string => {
-        const routeName = route.name?.toString() || ''
-        if (routeName.startsWith('blog')) return 'blog'
-        if (routeName.startsWith('photos')) return 'photos'
-        if (routeName.startsWith('projects')) return 'projects'
-        return 'content'
-    }
-
-    const collectionName = options.collection || getCollectionFromRoute()
+    const collectionName = options.collection || getCollectionFromRoute(route)
     const itemPath = options.path || route.path
     const asyncDataKey = `${collectionName}-${itemPath}`
 
     return useAsyncData(asyncDataKey, async () => {
-        return await queryCollection(collectionName as any).path(itemPath).first()
+        const data = { image: null, surround: { before: null, after: null } }
+        console.log("INTANTIATING DATA: \n", data);
+
+        data.image = await queryCollection(collectionName as any).path(itemPath).first()
+        console.log("IMAGE: \n", data.image);
+
+        const neighbors = await queryCollectionItemSurroundings(collectionName, itemPath, { fields: ['path'] })
+        data.surround.before = neighbors[0]
+        data.surround.after = neighbors[1]
+        console.log("SURROUND: \n", data.surround);
+
+        return data
+    })
+}
+
+export const useContentItemSurrounds = (options: ContentItemOptions = {}) => {
+    const route = useRoute()
+    const collectionName = options.collection || getCollectionFromRoute(route)
+    const itemPath = options.path || route.path
+    const asyncDataKey = `${collectionName}-${itemPath}`
+
+    return useAsyncData(asyncDataKey, async () => {
+        return await queryCollectionItemSurroundings(collectionName as any, itemPath, {
+            before: 1,
+            after: 1
+        })
     })
 }
 
 export const useContentQuery = (options: ContentQueryOptions = {}) => {
     const route = useRoute()
 
-    // Extract collection name from route (e.g., 'blog', 'photos', 'projects')
-    const getCollectionFromRoute = (): string => {
-        const routeName = route.name?.toString() || ''
-        if (routeName.startsWith('blog')) return 'blog'
-        if (routeName.startsWith('photos')) return 'photos'
-        if (routeName.startsWith('projects')) return 'projects'
-        return 'content'
-    }
-
-    const collectionName = options.collection || getCollectionFromRoute()
+    const collectionName = options.collection || getCollectionFromRoute(route)
     const asyncDataKey = `${collectionName}-${JSON.stringify(options)}`
 
     return useAsyncData(asyncDataKey, async () => {

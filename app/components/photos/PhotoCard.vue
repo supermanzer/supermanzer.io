@@ -10,7 +10,8 @@
              :alt="photo.description"
              aspect-ratio="4/3"
              cover
-            ></v-img>
+             
+            />
         </template>
         <template v-slot:default="{ save, close }">
 
