@@ -49,13 +49,6 @@ export default defineNuxtConfig({
     }
   },
 
-  runtimeConfig: {
-    stripeSK: process.env.STRIPE_SECRET_KEY,
-    public: {
-      stripePK: process.env.STRIPE_PUBLISHABLE_KEY,
-    }
-  },
-
   modules: [
     '@vueuse/nuxt',
     '@nuxt/content',
@@ -105,13 +98,17 @@ export default defineNuxtConfig({
             dark: 'night-owl',
             sepia: 'monokai'
           },
-          langs: ['javascript', 'python', 'bash', 'vue', 'rust', 'vue-html']
+          langs: ['javascript', 'python', 'bash', 'vue', 'rust', 'html']
         }
       }
     },
     watch: {
       enabled: true,
     },
+    database: {
+      type: 'sqlite',
+      filename: './contents.sqlite',
+    }
   },
 
   image: {
@@ -141,7 +138,6 @@ export default defineNuxtConfig({
   },
   vue: {
     compilerOptions: {
-      isCustomElement: (tag: string) => tag.startsWith('stripe-'),
     }
   },
 

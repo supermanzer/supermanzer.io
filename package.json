@@ -12,12 +12,14 @@
     "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
+    "@nuxt/content": "^3.11.0",
     "@nuxt/devtools": "3.1.1",
     "@nuxt/eslint": "1.12.1",
     "@nuxt/icon": "^2.1.1",
     "@vueuse/core": "^14.1.0",
     "@vueuse/nuxt": "^14.1.0",
     "nuxt": "^4.2.2",
+    "remark-emoji": "^5.0.2",
     "sass-embedded": "^1.97.2",
     "typescript": "5.9.3",
     "vite-plugin-vuetify": "2.1.2",
@@ -25,10 +27,9 @@
   },
   "dependencies": {
     "@mdi/font": "^7.3.67",
-    "@nuxt/content": "3.9.0",
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/seo": "^3.3.0",
-    "better-sqlite3": "^12.6.0",
+    "better-sqlite3": "^12.6.2",
     "netlify-cli": "^23.13.4"
   },
   "engines": {

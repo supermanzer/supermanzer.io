@@ -12,6 +12,7 @@ const title = "Supermanzer.io"
 
 
 const props = defineProps({
+  showTitle: {type: Boolean, required: false, default: true},
   showLinks: { type: Boolean, required: false, default: true },
   transparent: {type: Boolean, required: false, default: false},
 })
@@ -44,7 +45,7 @@ const classObject = reactive({
         @click="drawer = !drawer"
       />
 
-      <v-toolbar-title >{{ title }}</v-toolbar-title>
+      <v-toolbar-title v-if="showTitle">{{ title }}</v-toolbar-title>
 
       <v-spacer />
 
@@ -64,7 +65,7 @@ const classObject = reactive({
 
 <style lang="css">
 .transparent {
-  background: rgba(0 0 0/ 20%) !important;
+  background: rgba(0 0 0/ 10%) !important;
   .v-toolbar-title {
     color: white;
   }

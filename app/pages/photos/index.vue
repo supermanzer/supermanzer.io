@@ -3,7 +3,11 @@
 
     <v-row class="mx-16 mb-2">
       <v-col>
-        <p class="text-h4">My Photo Gallery</p>
+        <p class="text-h4 d-flex justify-space-between">
+          My Photo Gallery 
+
+  
+        </p>
         
         
       </v-col>

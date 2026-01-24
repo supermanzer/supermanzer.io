@@ -68,9 +68,5 @@ export default defineContentConfig({
             type: 'page',
             source: 'about/**/*.md',
         }),
-        stripe: defineCollection({
-            type: 'page',
-            source: 'stripe/**/*.md',
-        }),
     }
 })
