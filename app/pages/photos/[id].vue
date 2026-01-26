@@ -45,9 +45,9 @@ const { data } = await useContentPhoto()
 // Handle arrow key navigation
 useEventListener('keydown', (event) => {    
   if (event.key === 'ArrowLeft' && data.value.surround.after) {
-    navigateTo(data.value.surround.after.path)
+    navigateTo(data.surround.after.path)
   } else if (event.key === 'ArrowRight' && data.value.surround.before) {
-    navigateTo(data.value.surround.before.path)
+    navigateTo(data.surround.before.path)
   }
 })
 
