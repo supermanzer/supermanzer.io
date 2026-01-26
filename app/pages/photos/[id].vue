@@ -1,5 +1,5 @@
 <template>
-    <v-card flat height="100%" class="bg-blue-grey-lighten-2 d-flex">
+    <v-card v-if="data" flat height="100%" class="bg-blue-grey-lighten-2 d-flex">
         <v-row>
             <v-col cols="12" sm="1" align-self="center">
                 <v-btn
@@ -31,6 +31,9 @@
             </v-col>
         </v-row>
     </v-card>
+    <v-card v-else flat>
+      <v-progress-circular indeterminate/>
+    </v-card>
 </template>
 
 <script setup lang="js">
@@ -43,28 +46,22 @@ definePageMeta({
 const { data } = await useContentPhoto()
 
 const previous = computed(() => {
-  if (data.value.surround.before !== null) {
-    return data.value.surround.before.path
-  } else {
-    return null
-  }
+  // Use optional chaining to prevent the "undefined" crash
+  return data.value?.surround?.before?.path || null
 })
+
 const next = computed(() => {
-  if(data.value.surround.after !== null) {
-    return data.value.surround.after.path
-  } else {
-    return null
-  }
+  return data.value?.surround?.after?.path || null
 })
 
 
 // Handle arrow key navigation
-// useEventListener('keydown', (event) => {    
-//   if (event.key === 'ArrowLeft' && next !== null) {
-//     navigateTo(next.path)
-//   } else if (event.key === 'ArrowRight' && previous !== null) {
-//     navigateTo(previous.path)
-//   }
-// })
+useEventListener('keydown', (event) => {    
+  if (event.key === 'ArrowLeft' && next !== null) {
+    navigateTo(next)
+  } else if (event.key === 'ArrowRight' && previous !== null) {
+    navigateTo(previous)
+  }
+})
 
 </script>

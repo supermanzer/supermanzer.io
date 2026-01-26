@@ -97,22 +97,32 @@ const getCollectionFromRoute = (route): string => {
 
 export const useContentPhoto = (options: ContentPhotoOptions = {}) => {
     const route = useRoute()
-
     const collectionName = options.collection || getCollectionFromRoute(route)
-    const itemPath = options.path || route.path
-    const asyncDataKey = `${collectionName}-${itemPath}`
+
+    // Normalize the path: remove trailing slash if it exists
+    const itemPath = (options.path || route.path).replace(/\/$/, '')
+
+    const asyncDataKey = `photo-detail-${collectionName}-${itemPath}`
 
     return useAsyncData(asyncDataKey, async () => {
-        const data = { image: null, surround: { before: null, after: null } }
-        data.image = await queryCollection(collectionName as any).path(itemPath).first()
+        const image = await queryCollection(collectionName as any).path(itemPath).first()
 
-        const neighbors = await queryCollectionItemSurroundings(collectionName, itemPath, { fields: ['path'] })
-        data.surround.before = neighbors[0]
-        data.surround.after = neighbors[1]
-        return data
+        // If no image found, return a safe object structure to prevent 500s
+        if (!image) {
+            console.error(`Content not found for path: ${itemPath}`)
+            return { image: null, surround: { before: null, after: null } }
+        }
+
+        const neighbors = await queryCollectionItemSurroundings(collectionName as any, itemPath)
+        return {
+            image,
+            surround: {
+                before: neighbors[0] || null,
+                after: neighbors[1] || null
+            }
+        }
     })
 }
-
 
 export const useContentItem = (options: ContentItemOptions = {}) => {
     const route = useRoute()
