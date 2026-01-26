@@ -3,9 +3,9 @@
         <v-row>
             <v-col cols="12" sm="1" align-self="center">
                 <v-btn
-                 v-if="data.surround.after"
+                 v-if="next !== null"
                  icon="mdi-arrow-left"
-                 :to="data.surround.after.path"
+                 :to="next"
                  variant="text"
                 />
             </v-col>
@@ -23,9 +23,9 @@
             </v-col>
             <v-col cols="12" sm="1" align-self="center">
                 <v-btn
-                 v-if="data.surround.before"
+                 v-if="previous !== null"
                  icon="mdi-arrow-right"
-                 :to="data.surround.before.path"
+                 :to="previous"
                  variant="text"
                 />
             </v-col>
@@ -42,13 +42,29 @@ definePageMeta({
 
 const { data } = await useContentPhoto()
 
-// Handle arrow key navigation
-useEventListener('keydown', (event) => {    
-  if (event.key === 'ArrowLeft' && data.value.surround.after) {
-    navigateTo(data.surround.after.path)
-  } else if (event.key === 'ArrowRight' && data.value.surround.before) {
-    navigateTo(data.surround.before.path)
+const previous = computed(() => {
+  if (data.value.surround.before !== null) {
+    return data.value.surround.before.path
+  } else {
+    return null
   }
 })
+const next = computed(() => {
+  if(data.value.surround.after !== null) {
+    return data.value.surround.after.path
+  } else {
+    return null
+  }
+})
+
+
+// Handle arrow key navigation
+// useEventListener('keydown', (event) => {    
+//   if (event.key === 'ArrowLeft' && next !== null) {
+//     navigateTo(next.path)
+//   } else if (event.key === 'ArrowRight' && previous !== null) {
+//     navigateTo(previous.path)
+//   }
+// })
 
 </script>
