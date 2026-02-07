@@ -1,7 +1,7 @@
 ---
 title: Point Pinos Lighthouse 
 description: Looking at a coastal lighthouse between the cypress trees.
-src: /img/photos/_DSC3607_crop.jpg
+src: /img/photos/DSC3607_crop.jpg
 details:
   DateTimeOriginal: 2025:03:04 17:57:41
   Make: NIKON CORPORATION

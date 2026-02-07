@@ -30,7 +30,7 @@
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/seo": "^3.3.0",
     "better-sqlite3": "^12.6.2",
-    "netlify-cli": "^23.13.4"
+    "netlify-cli": "^23.15.1"
   },
   "engines": {
     "node": ">=24.12.0"
