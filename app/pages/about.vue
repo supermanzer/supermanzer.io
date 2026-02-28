@@ -19,4 +19,4 @@ const { data: sections } = await useAsyncData("sections", () =>
   queryCollection("about").order('title', 'DESC').all()
 )
 const {mobile} = useDisplay()
-</script>
+</script>        
