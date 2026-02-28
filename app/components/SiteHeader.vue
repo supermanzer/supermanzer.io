@@ -7,10 +7,6 @@ const {links} = useNav();
 const drawer = useState("drawer", () => false)
 const title = "Supermanzer.io"
 
-
-
-
-
 const props = defineProps({
   showTitle: {type: Boolean, required: false, default: true},
   showLinks: { type: Boolean, required: false, default: true },
@@ -25,7 +21,7 @@ const classObject = reactive({
 <template>
   <div>
  
-      <v-navigation-drawer v-model="drawer" temporary>
+      <v-navigation-drawer app  v-model="drawer" temporary>
         <v-list-item title="Supermanzer.io" subtitle="Site of Supermanzer" />
         <v-divider />
         <v-list-item
@@ -48,7 +44,7 @@ const classObject = reactive({
       <v-toolbar-title v-if="showTitle">{{ title }}</v-toolbar-title>
 
       <v-spacer />
-
+      
       <v-toolbar-items v-if="props.showLinks" class="d-none d-md-flex">
         <v-btn
           v-for="item in links"

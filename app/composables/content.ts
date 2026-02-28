@@ -87,7 +87,7 @@ interface ContentPhotoOptions {
     after?: number
 }
 
-const getCollectionFromRoute = (route): string => {
+const getCollectionFromRoute = (route: RouteLocationNormalizedLoadedGeneric): string => {
     const routeName = route.name?.toString() || ''
     if (routeName.startsWith('blog')) return 'blog'
     if (routeName.startsWith('photos')) return 'photos'

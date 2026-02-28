@@ -16,11 +16,11 @@ Both approaches lead to very different types of projects. One thing has been com
 
 My academic coding started with building mathematical models of oceanographic processes, using the MATLAB programming language and IDE. From mutli-box models to define the flow of nutrients throughout the world oceans to 2D advection-diffusion models of the dispersal of pollutants into the surface water, I got to dig into some fun and nerdy topics.
 
-For my M.Sc. thesis, I focused on physical mechanisms' influence on coastal phytoplankton by analyses of public data sources.  After building out more and more complex one-off scripts and having to tweak and re-run them, I wound up coding my own MATLAB ETL package for retrieving and processing [NDBC][def1] buoy data.
+For my M.Sc. thesis, I focused on physical mechanisms' influence on coastal phytoplankton by analyses of public data sources. After building out more and more complex one-off scripts and having to tweak and re-run them, I wound up coding my own MATLAB ETL package for retrieving and processing [NDBC](https://www.ndbc.noaa.gov/) buoy data.
 
-In addition to this I wrote many scripts for performing analyses and visualizing results. This is where I got my start in another passion of mine, data visualization. As my Physical Oceanography professor was fond of saying, if you don't visualize your data you don't understand it. While most of my academic coding was in MATLAB, all it takes is one licensing scare that threatens to derail years of work to make one realize that perhaps an open source alternative would be a better approach.  Python was a a natural fit as I had already realized just how much scientific coding and data visualization packages exist for that language.
+In addition to this I wrote many scripts for performing analyses and visualizing results. This is where I got my start in another passion of mine, data visualization. As my Physical Oceanography professor was fond of saying, if you don't visualize your data you don't understand it. While most of my academic coding was in MATLAB, all it takes is one licensing scare that threatens to derail years of work to make one realize that perhaps an open source alternative would be a better approach. Python was a a natural fit as I had already realized just how much scientific coding and data visualization packages exist for that language.
 
-I have since found myself working on projects not related to my previous research. I still want to write more code for scientific analysis and data modeling but the more I learn, the more project ideas I have and want to work on.  I have a loose idea for building an application that would automate checking different data sources for conditions of interest in NDBC buoy data and trigger larger data collection and analysis if those conditions are met.  I'd love to get to that but it's currently below the cut line for my project priorities 🤓
+I have since found myself working on projects not related to my previous research. I still want to write more code for scientific analysis and data modeling but the more I learn, the more project ideas I have and want to work on. I have a loose idea for building an application that would automate checking different data sources for conditions of interest in NDBC buoy data and trigger larger data collection and analysis if those conditions are met. I'd love to get to that but it's currently below the cut line for my project priorities 🤓
 
 ## Business Coding
 
@@ -36,7 +36,4 @@ Now I primarily use open source web tech like Django, PostgreSQL, Docker, etc. I
 
 In a recent large-scale project, I was automating manufacturing schedules based on placed orders. It allowed users to customize the rules that govern how orders get translated into manufacturing batches. Every time I take on a business project I find myself learning how to abstract more, hard-code less, and provide more intuitive interfaces. I'm surprised how much I like doing this stuff!
 
-I got started building websites to connect to data applications because it provided the most flexible and capable UI to present all the information I was working with.  However, now I am taking what I have learned a building a site simply to share what's on my mind and things I am doing.
-
-
-[def1]:https://www.ndbc.noaa.gov/
+I got started building websites to connect to data applications because it provided the most flexible and capable UI to present all the information I was working with. However, now I am taking what I have learned a building a site simply to share what's on my mind and things I am doing.
