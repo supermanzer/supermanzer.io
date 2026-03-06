@@ -49,13 +49,21 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@vueuse/nuxt', '@nuxt/content', '@nuxt/icon', '@nuxt/image', '@nuxt/eslint', // 'nuxt-graphql-client',
+  modules: [
+    '@vueuse/nuxt',
+    '@nuxt/content',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/eslint', // 'nuxt-graphql-client',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
         // @ts-expect-error some sort of something or other
         config.plugins.push(vuetify({ autoImport: true }))
       })
-    }, '@nuxtjs/seo', 'nuxt-studio'],
+    },
+    '@nuxtjs/seo',
+    // 'nuxt-studio'
+  ],
 
   // Using Nuxt config to define what pages to allow/prohibit indexing
   // https://nuxtseo.com/docs/robots/guides/nuxt-config
