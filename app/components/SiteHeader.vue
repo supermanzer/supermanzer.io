@@ -21,7 +21,7 @@ const classObject = reactive({
 <template>
   <div>
  
-      <v-navigation-drawer app  v-model="drawer" temporary>
+      <v-navigation-drawer app  v-model="drawer" temporary v-if="$vuetify.display.mobile">
         <v-list-item title="Supermanzer.io" subtitle="Site of Supermanzer" />
         <v-divider />
         <v-list-item

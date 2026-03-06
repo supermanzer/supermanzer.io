@@ -4,7 +4,7 @@ author:
   name: Ryan Manzer
   description: He puts the Manzer in Supermanzer
   image: /img/supermanzer.jpeg
-created_at: 2025-01-09
+created_at: 2025-01-08
 description: Writing software to make it easier to post and share photos on my site.
 projects:
   - website

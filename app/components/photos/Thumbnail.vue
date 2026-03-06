@@ -5,7 +5,7 @@
           :height="height"
           :width="height"
           :alt="photo.description"
-          aspect-ratio="4/3"
+  
           :quality="60"
           :href="photo.path"
           cover
