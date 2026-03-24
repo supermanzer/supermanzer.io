@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+<MobileContainer>
     <v-row>
       <v-col cols="12" sm="12" class="mx-8">
         <PageHeader :title="title" :subtitle="subtitle" />
@@ -10,7 +10,7 @@
         <ProjectsProjectCard :project="project" />
       </v-col>
     </v-row>
-  </v-container>
+  </MobileContainer>
 </template>
 
 <script setup>

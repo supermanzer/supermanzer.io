@@ -1,46 +1,43 @@
 <template>
-  <v-container fluid class="mx-4 " height="100%">
+  <MobileContainer>
 
-    <v-row class="mx-16 mb-2">
+    <v-row class="mx-2 mx-sm-4 mx-md-8 mb-2">
       <v-col>
-        <p class="text-h4 d-flex justify-space-between">
-          My Photo Gallery 
-
-  
+        <p class="text-h4" :class="{ 'text-center': smAndDown }">
+          My Photo Gallery
         </p>
         
         
       </v-col>
     </v-row>
     <div v-for="year in Object.keys(photos || {}).sort((a, b) => b - a)" :key="year">
-      <v-row class="mx-16 my-2">
+      <v-row class="mx-2 mx-sm-4 mx-md-8 my-2">
         <v-col cols="12">
-          <p class="text-h5">{{ year }}</p>
-          <div v-for="month in Object.keys(photos[year]).sort((a, b) => b - a)" :key="month" class="mt-4">
-           
-            <p class="text-h6 ml-4">{{ getMonthName(month) }}</p>
-             <v-divider class="my-2"></v-divider>
-            <v-row class="">
-              <v-col cols="12" sm="6" md="4" lg="3" v-for="photo in photos[year][month]" :key="photo.id" class="mx-2">
-                <!-- <PhotosPhotoCard :photo="photo" />  -->
-                 <PhotosThumbnail :photo="photo" />
-                
+          <p class="text-h5" :class="{ 'text-center': smAndDown }">{{ year }}</p>
+          <div v-for="month in Object.keys(photos[year]).sort((a, b) => b - a)" :key="month" class="mt-2">
+            <p class="text-h6" :class="{ 'text-center': smAndDown }">{{ getMonthName(month) }}</p>
+            <v-divider class="my-2"></v-divider>
+            <v-row>
+              <v-col cols="12" sm="12" md="6" lg="3" v-for="photo in photos[year][month]" :key="photo.id" :class="{ 'd-flex justify-center': smAndDown, 'px-3': !smAndDown }">
+                <PhotosThumbnail :photo="photo" />
               </v-col>
             </v-row>
-            
           </div>
         </v-col>
       </v-row>
-      <v-divider class="my-4" :thickness="4"></v-divider>
+      <v-divider class="my-3" :thickness="4"></v-divider>
     </div>
-  </v-container>
+  </MobileContainer>
 </template>
 
 <script setup>
+import { useDisplay } from 'vuetify'
 
 definePageMeta({
   layout: "photos",
 })
+
+const { smAndDown } = useDisplay()
 
 const getMonthName = (monthIndex) => {
   const monthNames = ["January", "February", "March", "April", "May", "June",
