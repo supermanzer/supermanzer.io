@@ -12,11 +12,21 @@
 <script setup lang="js">
 import { useDisplay } from 'vuetify';
 
+const route = useRoute();
 const heading = 'About Me';
 const subheading = "I'm just this guy, you know?";
 
+const getSections = async () => {
+  const result = await queryCollection("about").all()
+  console.log("GOT COLLECTIONS:\n", result);
+  
+}
 const { data: sections } = await useAsyncData("sections", () =>
-  queryCollection("about").order('title', 'DESC').all()
+  queryCollection("about").path(route.path).all()
 )
 const {mobile} = useDisplay()
+
+onMounted(() => {
+  getSections()
+})
 </script>        

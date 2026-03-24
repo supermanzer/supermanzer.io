@@ -43,3 +43,11 @@ This is another area of Machine Learning that is well researched and documented.
 ## Desired end result
 
 I want to be able to find a recipe I like, snap a photo (or photos) of the text, upload it to a local server on my home network, have a parsed and organized recipe returned to my phone with the option to edit the text prior to saving. I also want a list interface that allows searching by name or by ingredients. One ideal goal is to be able to look in the fridge/cupboard, know I have chicken thighs, onions, carrots, garbanzo beans, and jalapenos, and find any/all recipes that involve using those ingredients.
+
+## Update - 2026-03-06
+
+After struggling enough with the ML components, and getting distracted by other projects, I decided I was letting the perfect be the enemy of the good.  What I really wanted to do was get some recipes into a database and build a web interface that I found useful.
+
+This was a much more achievable goal but it still provided opportunities to learn.  I used to existing pattern I had built (Django back-end and REST API + Nuxt front-end) but instead of parsing photos of recipes I added an input form.   
+
+After iterating a few times with the Django admin UI, I wound up building a front-end component to handle recipe creation and updating.  This required me to add authentication, which then pushed me to set up remote hosting and SSL. 
