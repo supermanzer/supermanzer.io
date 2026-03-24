@@ -1,9 +1,9 @@
 
 <template>
-  <v-container>
+  <MobileContainer>
     <p class="text-h4 py-8">Project Details: {{ project.title }}</p>
     <ProjectsProjectDetail :project="project" />
-  </v-container>
+  </MobileContainer>
 </template>
 
 <script setup lang="js">

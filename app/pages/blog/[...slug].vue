@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <MobileContainer>
     <v-row>
       <v-col cols="12" sm="12" md="12" lg="3" order-lg="1" order-md="2" order-sm="2">
         <AuthorCard v-if="post.author !== null" :author="post.author" header="Author" class="mb-6"/>
@@ -24,7 +24,7 @@
         
       </v-col>
     </v-row>
-  </v-container>
+  </MobileContainer>
 </template>
 
 <script setup>

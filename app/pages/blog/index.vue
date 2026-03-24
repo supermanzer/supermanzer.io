@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <MobileContainer>
     <v-row>
       <v-col cols="12" sm="12">
       <p class="text-h2">Blog Posts</p>
@@ -9,7 +9,7 @@
     <v-row class="height-100">
          <BlogTimeline  :posts="posts"  />
     </v-row>
-  </v-container>
+  </MobileContainer>
 </template>
 
 <script setup lang="js">
