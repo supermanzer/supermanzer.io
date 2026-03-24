@@ -12,18 +12,18 @@
 <script setup lang="js">
 import { useDisplay } from 'vuetify';
 
-const route = useRoute();
 const heading = 'About Me';
 const subheading = "I'm just this guy, you know?";
 
+const sections = ref([]);
+
 const getSections = async () => {
   const result = await queryCollection("about").all()
-  console.log("GOT COLLECTIONS:\n", result);
+  console.log("SETTING RESULT AS SECTIONS:\n", result);
+  sections.value = result
   
 }
-const { data: sections } = await useAsyncData("sections", () =>
-  queryCollection("about").path(route.path).all()
-)
+
 const {mobile} = useDisplay()
 
 onMounted(() => {
