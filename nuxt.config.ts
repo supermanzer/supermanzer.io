@@ -139,6 +139,11 @@ export default defineNuxtConfig({
           // api: 'modern-compiler'
         }
       },
+    },
+    server: {
+      watch: {
+        usePolling: true
+      }
     }
   },
   vue: {
