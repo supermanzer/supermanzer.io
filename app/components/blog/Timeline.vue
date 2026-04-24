@@ -24,7 +24,7 @@ const props = defineProps({
                     <v-avatar :image="post.meta.img"></v-avatar>
                 </template>
                 <v-card>
-                    <v-list-item :to="post.stem">
+                    <v-list-item :to="post.path">
                         <v-list-item-title>
                             {{ post.title }}
                         </v-list-item-title>
