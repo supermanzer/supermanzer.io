@@ -1,6 +1,6 @@
 ---
-title: Rethinking Stripe Integrations on this Website
-description: Thoughts I have about whether or not to include example Stripe integrations on my personal website
+title: Stripe Integrations Examples
+description: Building a new Stripe Integrations site and the challenges that come with it.
 img: /img/blog/stripe-icon.svg
 created_at: Apr 24, 2026
 author:
