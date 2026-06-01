@@ -18,7 +18,7 @@
             <p class="text-h6" :class="{ 'text-center': smAndDown }">{{ getMonthName(month) }}</p>
             <v-divider class="my-2"></v-divider>
             <v-row>
-              <v-col cols="12" sm="12" md="6" lg="3" v-for="photo in photos[year][month]" :key="photo.id" :class="{ 'd-flex justify-center': smAndDown, 'px-3': !smAndDown }">
+              <v-col cols="12" sm="12" md="6" lg="3" v-for="photo in photos[year][month]" :key="photo.id" :class="['pa-5', { 'd-flex justify-center': smAndDown }]">
                 <PhotosThumbnail :photo="photo" />
               </v-col>
             </v-row>

@@ -1,5 +1,5 @@
 <template>
-    <a :href="photo.path">
+
         <NuxtImg
           :src="photo.src"
           :height="height"
@@ -9,8 +9,9 @@
           :quality="60"
           :href="photo.path"
           cover
+          @click="photoNav"
         />
-    </a>
+
 </template>
 
 <script setup lang="js">
@@ -21,9 +22,15 @@
     },
     height: {
         type: [String, Number],
-        default: 300,
+        default: 250,
     },
 })
 
 const img = useImage()
+
+const photoNav = () => {
+    console.log("PHOTO THUMBNAIL CLICKED");
+    
+    window.location.replace(props.photo.path)
+}
 </script>
