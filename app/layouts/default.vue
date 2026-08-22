@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <SiteHeader />
-    <v-main >
+    <v-main class="pb-12">
         <NuxtPage />
     </v-main>
     <SiteFooter />
@@ -14,10 +14,6 @@ main {
   /* margin-bottom: 2em; */
   /* padding: 4em 4em; */
   /* margin: 0em 3em; */
-}
-
-main.dark {
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }
 
 pre {

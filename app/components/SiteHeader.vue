@@ -52,6 +52,7 @@ const classObject = reactive({
           :href="item.href"
           :active="item.active"
           :text="item.name"
+          :color="item.active ? 'primary' : undefined"
         />
       </v-toolbar-items>
       
