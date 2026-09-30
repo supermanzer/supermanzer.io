@@ -6,7 +6,7 @@
 // Frontmatter mirrors the `blog` collection in content.config.ts. Drafts are
 // hidden from listings and 404 on their own URL until you flip `draft: false`
 // (preview locally with NUXT_PUBLIC_SHOW_DRAFTS=true npm run dev).
-import { existsSync, writeFileSync } from 'node:fs'
+import { existsSync, readdirSync, writeFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseArgs } from 'node:util'
@@ -68,6 +68,14 @@ if (import.meta.url === `file://${process.argv[1]}`) {
     if (!title) {
         console.error('Usage: npm run new:post -- "Post title" [--tags a,b] [--projects x,y] [--description "..."]')
         process.exit(1)
+    }
+
+    const known = readdirSync(join(ROOT, 'content', 'projects'))
+        .filter((f) => f.endsWith('.md') && f !== 'index.md')
+        .map((f) => f.replace(/\.md$/, ''))
+    const unknown = list(values.projects).filter((p) => !known.includes(p))
+    if (unknown.length) {
+        console.warn(`Warning: no project page for "${unknown.join(', ')}" (known: ${known.join(', ')}). The post will not link to it.`)
     }
 
     const slug = slugify(title)

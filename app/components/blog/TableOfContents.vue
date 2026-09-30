@@ -1,5 +1,5 @@
 <template>
-    <v-card class="position-sticky top-0">
+    <v-card>
         <v-list-item>
             <v-list-item-title class="font-weight-medium ">Table of Contents</v-list-item-title>
         </v-list-item>

@@ -93,9 +93,15 @@ interface ContentPhotoOptions {
  * Every blog query goes through this so a draft can't leak via a listing,
  * a direct URL, or prev/next links.
  */
-export const withoutDrafts = <T extends { where: (...args: any[]) => T }>(query: T, collectionName: string): T => {
+export const withoutDrafts = <T extends { where: (...args: any[]) => T }>(
+    query: T,
+    collectionName: string,
+    // Composables like useRuntimeConfig() only work before the first `await` in a
+    // handler, so async callers read this up front and pass it in.
+    showDrafts: boolean = !!useRuntimeConfig().public.showDrafts,
+): T => {
     if (collectionName !== 'blog') return query
-    if (useRuntimeConfig().public.showDrafts) return query
+    if (showDrafts) return query
     return query.where('draft', '<>', true)
 }
 
@@ -191,5 +197,44 @@ export const useContentQuery = (options: ContentQueryOptions = {}) => {
         }
 
         return data
+    })
+}
+
+/**
+ * Related posts for a blog entry: for each project slug in the post's
+ * `projects` frontmatter, the project page plus the OTHER published posts
+ * tagged with that project.
+ *
+ * Slugs are file names in content/projects (e.g. `weather-app`). A slug with no
+ * matching project page is skipped, so a typo can never produce a broken link.
+ * Runs from the page's setup (not a child component) so the data lands in the
+ * server payload.
+ */
+export const useRelatedPosts = (projects: string[] | undefined, currentPath: string) => {
+    // Slugs go into a LIKE pattern below, so only accept plain file-name characters.
+    const slugs = (projects ?? []).filter((s) => /^[\w-]+$/.test(s))
+    const showDrafts = !!useRuntimeConfig().public.showDrafts
+
+    return useAsyncData(`related-posts-${currentPath}`, async () => {
+        const groups = await Promise.all(
+            slugs.map(async (slug) => {
+                const project = await queryCollection('projects')
+                    .path(`/projects/${slug}`)
+                    .select('title', 'path')
+                    .first()
+                if (!project) return null
+
+                // `projects` is stored as a JSON array, so match the quoted element.
+                const posts = await withoutDrafts(queryCollection('blog'), 'blog', showDrafts)
+                    .where('projects', 'LIKE', `%"${slug}"%`)
+                    .where('path', '<>', currentPath)
+                    .order('created_at', 'DESC')
+                    .select('title', 'path', 'created_at', 'description')
+                    .all()
+
+                return { slug, project, posts }
+            }),
+        )
+        return groups.filter((g) => g !== null)
     })
 }

@@ -22,6 +22,18 @@ const walk = (dir) =>
 
 const isDraft = (text) => /^draft:\s*true\s*$/m.test(text.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? '')
 
+// Blog `projects:` values are file names in content/projects; anything else links nowhere.
+const projectSlugs = new Set(
+    readdirSync(join(CONTENT, 'projects'))
+        .filter((f) => f.endsWith('.md') && f !== 'index.md')
+        .map((f) => f.replace(/\.md$/, '')),
+)
+const projectsOf = (text) => {
+    const fm = text.match(/^---\n([\s\S]*?)\n---/)?.[1] ?? ''
+    const block = fm.match(/^projects:\s*\n((?:[ \t]+-[^\n]*\n?)+)/m)?.[1] ?? ''
+    return [...block.matchAll(/^[ \t]+-\s*(.+?)\s*$/gm)].map((m) => m[1].replace(/^["']|["']$/g, ''))
+}
+
 let failures = 0
 let scanned = 0
 for (const file of walk(CONTENT)) {
@@ -36,6 +48,18 @@ for (const file of walk(CONTENT)) {
         failures++
         console.error(`✖ ${rel}: ${found.join(', ')}`)
     }
+}
+
+// Unknown project slugs: an error for drafts (new work), a warning for published posts.
+for (const file of walk(join(CONTENT, 'blog'))) {
+    if (!file.endsWith('.md')) continue
+    const text = readFileSync(file, 'utf8')
+    const unknown = projectsOf(text).filter((slug) => !projectSlugs.has(slug))
+    if (!unknown.length) continue
+    const rel = relative(ROOT, file)
+    const draft = isDraft(text)
+    if (draft) failures++
+    console[draft ? 'error' : 'warn'](`${draft ? '✖' : '⚠'} ${rel}: unknown project slug(s): ${unknown.join(', ')} (known: ${[...projectSlugs].join(', ')})`)
 }
 
 console.log(`Scanned ${scanned} file(s); ${failures} with sensitive patterns.`)
