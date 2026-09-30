@@ -28,4 +28,5 @@ Currently I'm still trying to assess the total costs associated with running thi
 
 That being said, I would like to start opening up the service to new sign ups.  I have an idea of a basic functionality that would prevent my costs from exploding and I could gradually roll out new features.  The basic set of features would restrict users to only getting recommendations once a month and prevent any sort of manual triggering.  I should be able to offer this at a monthly price about the same as a cup of coffee (~$4).   
 
-But the most important goal of the project, teaching myself soemthing about building AI powered applications, has already been reached.  Also I like the service it's currently providingso altogether I think his has already been a success.
+But the most important goal of the project, teaching myself soemthing about building AI powered applications, has already been reached.  Also I like the service it's currently providing so altogether I think his has already been a success.
+
