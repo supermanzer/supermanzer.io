@@ -1,0 +1,36 @@
+{
+  "slug": "photo-info-cla",
+  "repo": "supermanzer/photo-info",
+  "lastCommit": "2025-07-20",
+  "totalCommits": 5,
+  "commitsLast90Days": 0,
+  "latestTag": null,
+  "recent": [
+    {
+      "sha": "176cb3d",
+      "date": "2025-07-20",
+      "subject": "Adding ability to recursively walk directories in both image and markdown directories and adjusting tests"
+    },
+    {
+      "sha": "51bdbab",
+      "date": "2025-04-19",
+      "subject": "Adjusting photo-info to allow for project configuration and better CLI commands"
+    },
+    {
+      "sha": "c8006b5",
+      "date": "2025-01-23",
+      "subject": "Revising packaging structure"
+    },
+    {
+      "sha": "0c484f1",
+      "date": "2024-12-31",
+      "subject": "Revised writing to markdown to use spaces isntead of tab characters"
+    },
+    {
+      "sha": "ad7f4ca",
+      "date": "2024-12-30",
+      "subject": "Initial commit"
+    }
+  ],
+  "generatedAt": "2026-09-29"
+}

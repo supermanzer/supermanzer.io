@@ -13,7 +13,7 @@
             <v-card-item>
               <v-card-title class="text-h4 text-wrap">{{ post.title }}</v-card-title>
               <v-divider></v-divider>
-              <v-card-subtitle>{{ post.decription }}</v-card-subtitle>
+              <v-card-subtitle>{{ post.description }}</v-card-subtitle>
               <div>Created: 
                 {{ dateFormat(post.created_at) }}
               </div>
@@ -29,6 +29,9 @@
 
 <script setup>
 const { data: post } = await useContentItem()
+if (!post.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Post not found', fatal: true })
+}
 </script>
 
 <style>

@@ -9,7 +9,13 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "new:post": "node scripts/new-post.mjs",
+    "digest:notes": "node scripts/digest-notes.mjs",
+    "digest:sessions": "node scripts/digest-sessions.mjs",
+    "activity:update": "node scripts/project-activity.mjs",
+    "check:content": "node scripts/check-content.mjs",
+    "test:scripts": "node --test \"scripts/**/*.test.mjs\""
   },
   "devDependencies": {
     "@nuxt/content": "^3.11.0",

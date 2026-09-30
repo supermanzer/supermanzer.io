@@ -71,6 +71,12 @@ export default defineNuxtConfig({
     disallow: ['*localhost*'],
 
   },
+  runtimeConfig: {
+    public: {
+      // Set NUXT_PUBLIC_SHOW_DRAFTS=true to preview posts with `draft: true`
+      showDrafts: false
+    }
+  },
   site: {
     url: 'https://supermanzer.io',
     name: "Supermanzer"

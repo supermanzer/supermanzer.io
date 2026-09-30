@@ -1,0 +1,51 @@
+{
+  "slug": "local-recipe-server",
+  "repo": "supermanzer/local-recipe-server",
+  "lastCommit": "2026-08-13",
+  "totalCommits": 70,
+  "commitsLast90Days": 4,
+  "latestTag": null,
+  "recent": [
+    {
+      "sha": "1efaaf4",
+      "date": "2026-08-13",
+      "subject": "Add recipes.supermanzer.io to CORS_ALLOWED_ORIGINS"
+    },
+    {
+      "sha": "b0f6a13",
+      "date": "2026-08-13",
+      "subject": "Add recipes.supermanzer.io to gateway server_name"
+    },
+    {
+      "sha": "0bff92f",
+      "date": "2026-07-19",
+      "subject": "Adding component field for grouping recipe steps"
+    },
+    {
+      "sha": "509a928",
+      "date": "2026-07-19",
+      "subject": "Move CLAUDE.md into .claude/ and refresh it to match current code"
+    },
+    {
+      "sha": "e5bce85",
+      "date": "2026-02-21",
+      "subject": "Closes #7. Implements filtering ingredients in list view to remaining ingredients when ingredients selected in search bar"
+    },
+    {
+      "sha": "97cad72",
+      "date": "2026-02-19",
+      "subject": "Fixes relationship between steps and ingredients in edit form. Closes #15"
+    },
+    {
+      "sha": "3d250c6",
+      "date": "2026-02-16",
+      "subject": "Fixing typo in gitignore"
+    },
+    {
+      "sha": "d88277f",
+      "date": "2026-02-16",
+      "subject": "removing local override file"
+    }
+  ],
+  "generatedAt": "2026-09-29"
+}

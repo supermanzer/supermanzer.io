@@ -31,3 +31,6 @@ logs
 
 # Local claude directory
 .claude
+# Redacted digests of private sources + per-machine redaction rules
+.digests
+scripts/redact.local.json

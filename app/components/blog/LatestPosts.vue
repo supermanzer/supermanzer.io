@@ -26,7 +26,7 @@ defineProps({
 })
 
 const { data: posts, status, error } = await useAsyncData("blog-posts", () => {
-  return queryCollection("blog")
+  return withoutDrafts(queryCollection("blog"), "blog")
   .order('created_at', 'DESC')
   .limit(4)
   .all()

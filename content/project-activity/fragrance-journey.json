@@ -1,0 +1,51 @@
+{
+  "slug": "fragrance-journey",
+  "repo": "supermanzer/fragrance.supermanzer.io",
+  "lastCommit": "2026-09-28",
+  "totalCommits": 58,
+  "commitsLast90Days": 38,
+  "latestTag": null,
+  "recent": [
+    {
+      "sha": "1b5e898",
+      "date": "2026-09-28",
+      "subject": "Type-check the Stripe-calling modules with ty"
+    },
+    {
+      "sha": "ed9d094",
+      "date": "2026-09-28",
+      "subject": "Drop FragranceConfig columns orphaned by an edited migration"
+    },
+    {
+      "sha": "f3957e7",
+      "date": "2026-09-28",
+      "subject": "Fix billing/quota correctness, migrate to StripeClient, move tests to a package"
+    },
+    {
+      "sha": "3eff2d3",
+      "date": "2026-09-28",
+      "subject": "Tell users to check spam for invite and password-reset emails"
+    },
+    {
+      "sha": "06eb10c",
+      "date": "2026-09-28",
+      "subject": "Make the working tree the source of truth for dev containers"
+    },
+    {
+      "sha": "2c491c2",
+      "date": "2026-09-21",
+      "subject": "Harden email revert: sync only on real email changes; retry Stripe restore"
+    },
+    {
+      "sha": "0645d73",
+      "date": "2026-09-21",
+      "subject": "Add /auth/revert-email confirmation page"
+    },
+    {
+      "sha": "59433a6",
+      "date": "2026-09-21",
+      "subject": "Add signed email-revert link for portal email changes"
+    }
+  ],
+  "generatedAt": "2026-09-29"
+}

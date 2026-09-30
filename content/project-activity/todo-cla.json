@@ -1,0 +1,51 @@
+{
+  "slug": "todo-cla",
+  "repo": "supermanzer/todo-cla",
+  "lastCommit": "2021-09-11",
+  "totalCommits": 20,
+  "commitsLast90Days": 0,
+  "latestTag": "v0.1.0",
+  "recent": [
+    {
+      "sha": "3b0923c",
+      "date": "2021-09-11",
+      "subject": "(docs) fixing rst link syntax"
+    },
+    {
+      "sha": "8d16c32",
+      "date": "2021-09-11",
+      "subject": "(docs) extending documentation"
+    },
+    {
+      "sha": "7eeb74d",
+      "date": "2021-09-11",
+      "subject": "(docs) extending documentation"
+    },
+    {
+      "sha": "c8d20ab",
+      "date": "2021-09-11",
+      "subject": "(docs) extending documentation"
+    },
+    {
+      "sha": "ea487fd",
+      "date": "2021-09-11",
+      "subject": "(docs): attempting to create better docs using sphinx"
+    },
+    {
+      "sha": "8180f36",
+      "date": "2021-09-11",
+      "subject": "Adding documentation and changelog links to setup.cfg"
+    },
+    {
+      "sha": "23d4fca",
+      "date": "2021-09-11",
+      "subject": "Improving test coverage"
+    },
+    {
+      "sha": "67d38ca",
+      "date": "2021-09-04",
+      "subject": "Create .nojekyll"
+    }
+  ],
+  "generatedAt": "2026-09-29"
+}

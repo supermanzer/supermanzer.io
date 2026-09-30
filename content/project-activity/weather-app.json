@@ -1,0 +1,51 @@
+{
+  "slug": "weather-app",
+  "repo": "supermanzer/weatherapp",
+  "lastCommit": "2026-07-30",
+  "totalCommits": 21,
+  "commitsLast90Days": 4,
+  "latestTag": null,
+  "recent": [
+    {
+      "sha": "4bafb48",
+      "date": "2026-07-30",
+      "subject": "Reflow NWS forecast discussion text and enlarge the dialog"
+    },
+    {
+      "sha": "ae06c48",
+      "date": "2026-07-21",
+      "subject": "Cache forecast data in Room with async background refresh"
+    },
+    {
+      "sha": "0ce8d89",
+      "date": "2026-07-21",
+      "subject": "Add NWS forecast discussion and update Compose UI/build tooling"
+    },
+    {
+      "sha": "429e5a0",
+      "date": "2026-07-12",
+      "subject": "Lots of things have changed"
+    },
+    {
+      "sha": "afa0212",
+      "date": "2025-01-26",
+      "subject": "Revising styling and adjusting Forecast viewModel update functions"
+    },
+    {
+      "sha": "9b6ff7f",
+      "date": "2024-11-03",
+      "subject": "Completes basic funcationality of Layout fragment"
+    },
+    {
+      "sha": "6f6f146",
+      "date": "2024-09-23",
+      "subject": "Reducing forecast periods for hourly forecast to 24"
+    },
+    {
+      "sha": "d874023",
+      "date": "2024-09-23",
+      "subject": "changes in OS"
+    }
+  ],
+  "generatedAt": "2026-09-29"
+}

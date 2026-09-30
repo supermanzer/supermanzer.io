@@ -87,6 +87,18 @@ interface ContentPhotoOptions {
     after?: number
 }
 
+/**
+ * Hides draft posts (`draft: true`) from blog queries unless
+ * runtimeConfig.public.showDrafts is enabled (NUXT_PUBLIC_SHOW_DRAFTS=true).
+ * Every blog query goes through this so a draft can't leak via a listing,
+ * a direct URL, or prev/next links.
+ */
+export const withoutDrafts = <T extends { where: (...args: any[]) => T }>(query: T, collectionName: string): T => {
+    if (collectionName !== 'blog') return query
+    if (useRuntimeConfig().public.showDrafts) return query
+    return query.where('draft', '<>', true)
+}
+
 const getCollectionFromRoute = (route: RouteLocationNormalizedLoadedGeneric): string => {
     const routeName = route.name?.toString() || ''
     if (routeName.startsWith('blog')) return 'blog'
@@ -132,7 +144,7 @@ export const useContentItem = (options: ContentItemOptions = {}) => {
     const asyncDataKey = `${collectionName}-${itemPath}`
 
     return useAsyncData(asyncDataKey, async () => {
-        return await queryCollection(collectionName as any).path(itemPath).first()
+        return await withoutDrafts(queryCollection(collectionName as any), collectionName).path(itemPath).first()
     })
 }
 
@@ -143,10 +155,10 @@ export const useContentItemSurrounds = (options: ContentItemOptions = {}) => {
     const asyncDataKey = `${collectionName}-${itemPath}`
 
     return useAsyncData(asyncDataKey, async () => {
-        return await queryCollectionItemSurroundings(collectionName as any, itemPath, {
+        return await withoutDrafts(queryCollectionItemSurroundings(collectionName as any, itemPath, {
             before: 1,
             after: 1
-        })
+        }), collectionName)
     })
 }
 
@@ -157,7 +169,7 @@ export const useContentQuery = (options: ContentQueryOptions = {}) => {
     const asyncDataKey = `${collectionName}-${JSON.stringify(options)}`
 
     return useAsyncData(asyncDataKey, async () => {
-        let query = queryCollection(collectionName as any)
+        let query = withoutDrafts(queryCollection(collectionName as any), collectionName)
 
         // Apply where clauses
         if (options.where && Array.isArray(options.where)) {
