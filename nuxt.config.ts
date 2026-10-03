@@ -104,7 +104,7 @@ export default defineNuxtConfig({
             dark: 'night-owl',
             sepia: 'monokai'
           },
-          langs: ['javascript', 'python', 'bash', 'vue', 'rust', 'html']
+          langs: ['javascript', 'python', 'bash', 'vue', 'rust', 'html', 'kotlin']
         }
       }
     },
