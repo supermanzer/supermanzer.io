@@ -1,6 +1,7 @@
 ---
 title: "Learning Compose by Reading What the AI Wrote"
 description: "Using an AI agent to build my coffee app is teaching me Jetpack Compose, and it surprised me by drawing the charts by hand."
+img: /img/blog/android.png
 author:
   name: Ryan Manzer
   description: He puts the Manzer in Supermanzer
@@ -11,8 +12,8 @@ tags:
   - compose
   - ai
 projects:
-  - bean-buddy
-draft: true
+  - brew-buddy
+draft: false
 ---
 
 ## The app is the textbook
@@ -60,7 +61,30 @@ Canvas(
 
 This one taught me how much work a `Modifier` chain does. The size, the description a screen reader announces, and the tap handling are all bolted on from the outside, in order, before any drawing happens. The tap handler doesn't know anything about circles on the screen. It works out where each point sits horizontally, finds the one closest to my finger, and stores its index. Because `selectedIndex` is state, the chart redraws with that point highlighted. Nothing tells the chart to redraw. It just reads a value that changed.
 
-Coming from Vue, that clicked for me. It's the same idea as a `ref`: change the data and the view follows.
+### State that is computed from other state
+
+The chunk that taught me the most came from the scrolling number wheel I use to pick water temperature and grind size. This time I asked Gemini in Android Studio to explain it:
+
+```kotlin [WheelNumberPicker.kt]
+val centeredIndex by remember {
+    derivedStateOf {
+        val layout = listState.layoutInfo
+        val viewportCenter = (layout.viewportStartOffset + layout.viewportEndOffset) / 2
+        layout.visibleItemsInfo
+            .minByOrNull { abs(it.offset + it.size / 2 - viewportCenter) }
+            ?.index
+            ?: listState.firstVisibleItemIndex
+    }
+}
+```
+
+The wheel needs to know which number is sitting in the middle, so it can make that one bigger and brighter and report it as the selected value. The block works that out: find the center of the visible area, then pick the item whose own center is closest to it. If nothing has been laid out yet, fall back to the first visible item.
+
+The interesting part is `derivedStateOf`. The list's `layoutInfo` changes on every frame while I'm scrolling, because every item's pixel offset is moving. If the wheel read `layoutInfo` directly, it would recompose on every one of those frames. But the answer I care about, which number is in the middle, only changes once for each number that passes the center. `derivedStateOf` sits in between. It recalculates whenever the state it reads changes, but it only tells the rest of the UI when the result is different from last time. Hundreds of scroll updates go in and a handful of meaningful changes come out.
+
+That was the idea I found most interesting: state can be computed from other state, and Compose only recomposes when the computed value has meaningfully changed.
+
+Coming from Vue, that clicked for me. `mutableStateOf` is the same idea as a `ref`: change the data and the view follows. `derivedStateOf` is a `computed`: a value worked out from other values that only updates what depends on it when its own result changes.
 
 ## The charts were rolled by hand
 

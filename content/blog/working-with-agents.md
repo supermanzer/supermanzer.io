@@ -6,6 +6,8 @@ author:
   description: He puts the Manzer in Supermanzer
   image: /img/supermanzer.jpeg
 created_at: 2026-04-19
+projects:
+  - brew-buddy
 img: /img/blog/robot.png
 ---
 ## AI for Fun and Learning
