@@ -5,6 +5,8 @@ author:
   name: Ryan Manzer
   description: He puts the Manzer in Supermanzer
   image: /img/supermanzer.jpeg
+project:
+- fragrance-journey
 created_at: 2026-07-24
 img: /img/blog/nose_smell.png
 ---

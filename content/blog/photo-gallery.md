@@ -8,7 +8,6 @@ created_at: 2023-05-24
 description: Taking my budding new hobby of photography beyond Instagram by building my own photo gallery.
 projects:
   - website
-  - photos
 tags:
   - vuetify
   - webdev
