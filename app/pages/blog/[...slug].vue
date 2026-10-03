@@ -24,7 +24,7 @@
               </div>
             </v-card-item>
             
-            <ContentRenderer :value="post" :prose="true" />
+            <ContentRenderer :value="post" :prose="true" class="content-prose" />
           </v-card>
         
       </v-col>

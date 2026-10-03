@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-card class="mx-auto" elevation="4">
+        <v-card class="mx-auto"  hover>
             <v-img 
             v-if="project.meta.banner"
             :src="project.meta.banner"
@@ -30,7 +30,7 @@
             </v-img>
             <v-card-text>
                 
-                <ContentRenderer :value='project' />
+                <ContentRenderer :value='project' class="content-prose" />
             </v-card-text>
         </v-card>
     </div>

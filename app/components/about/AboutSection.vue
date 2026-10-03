@@ -8,7 +8,7 @@
             </div>
         </v-parallax>
         <v-card class=" pa-6">
-            <ContentRenderer :value="section" />
+            <ContentRenderer :value="section" class="content-prose" />
         </v-card>
     </div>
 </template>

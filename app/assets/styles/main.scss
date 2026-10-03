@@ -19,6 +19,36 @@ div {
         font-weight: vars.$font-weight-medium;
     }
 
+    // Inline links in written content (the ContentRenderer root carries
+    // `content-prose`). Everything is wrapped in :where() so the base rule
+    // compiles to `div :where(.content-prose) a:where(...)`, specificity
+    // (0,0,2): equal to the default `div a` rule above, so it wins only by
+    // coming later in this file, and it loses to any Vuetify component class.
+    // Keep it below the default `a` rule.
+    // Excluded: anchors that are Vuetify components, the heading anchors
+    // Nuxt Content generates (<h2><a href="#id">), and anything in a code block.
+    :where(.content-prose) a:where(:not(.v-btn, .v-list-item, .v-card, :is(h1, h2, h3, h4, h5, h6, pre) a)) {
+        color: rgb(var(--v-theme-primary));
+        font-weight: vars.$font-weight-medium;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.2em;
+        text-decoration-color: currentColor;
+
+        &:hover {
+            text-decoration-thickness: 2px;
+            background-color: rgba(var(--v-theme-primary), 0.08);
+            border-radius: 2px;
+        }
+
+        // (0,1,2), which also beats Vuetify's reset `a:hover { outline-width: 0 }`.
+        &:focus-visible {
+            outline: 2px solid rgb(var(--v-theme-primary));
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+    }
+
     h2 {
         margin-top: vars.$margin-top-large;
     }
