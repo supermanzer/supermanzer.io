@@ -1,5 +1,5 @@
 <template>
-    <v-card v-if="activity" class="mt-6" variant="tonal">
+    <v-card v-if="activity" variant="tonal">
         <v-card-title class="text-h6">Recent activity</v-card-title>
         <v-card-subtitle>
             {{ activity.totalCommits }} commits · {{ activity.commitsLast90Days }} in the last 90 days ·

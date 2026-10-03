@@ -238,3 +238,28 @@ export const useRelatedPosts = (projects: string[] | undefined, currentPath: str
         return groups.filter((g) => g !== null)
     })
 }
+
+/**
+ * Posts about a project: the published blog posts whose `projects` frontmatter
+ * lists the given project slug, newest first.
+ *
+ * The slug is a file name in content/projects (e.g. `weather-app`). Anything
+ * else yields an empty list. Runs from the page's setup (not a child component)
+ * so the data lands in the server payload.
+ */
+export const useProjectPosts = (slug: string) => {
+    // The slug goes into a LIKE pattern below, so only accept plain file-name characters.
+    const isValidSlug = /^[\w-]+$/.test(slug)
+    const showDrafts = !!useRuntimeConfig().public.showDrafts
+
+    return useAsyncData(`project-posts-${slug}`, async () => {
+        if (!isValidSlug) return []
+
+        // `projects` is stored as a JSON array, so match the quoted element.
+        return await withoutDrafts(queryCollection('blog'), 'blog', showDrafts)
+            .where('projects', 'LIKE', `%"${slug}"%`)
+            .order('created_at', 'DESC')
+            .select('title', 'path', 'created_at')
+            .all()
+    })
+}
