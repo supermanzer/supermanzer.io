@@ -1,5 +1,5 @@
 <template>
-    <v-container :fluid="breakPoint" class="pb-12"">
+    <v-container :fluid="breakPoint" class="pb-12">
         <slot />
     </v-container>
 </template>
