@@ -7,7 +7,7 @@ author:
 created_at: 2025-01-08
 description: Writing software to make it easier to post and share photos on my site.
 projects:
-  - photo-info-cli
+  - photo-info-cla
 tags:
   - python
   - code
