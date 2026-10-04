@@ -10,15 +10,15 @@
             <v-row class="my-5" justify="space-around">
                 <v-btn 
                   class="light-blue-accent-4"
-                  @click="loadElement"
                   text="Load Element"
                   :disabled="data.clientSecret != null"
+                  @click="loadElement"
                 />
                 <v-btn 
                   class="green-accent-4"
-                  @click="confirmIntent"
                   text="Confirm Intent"
                   :disabled="data.isComplete == false"
+                  @click="confirmIntent"
                 />
             </v-row>
         </v-card-actions>

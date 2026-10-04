@@ -28,7 +28,7 @@ export default {
         :text="link.tooltip_text"
         location="top"
       >
-        <template v-slot:activator="{ props }">
+        <template #activator="{ props }">
           <v-btn icon class="mx-4" v-bind="props">
             <v-icon>{{ link.icon }}</v-icon>
           </v-btn>

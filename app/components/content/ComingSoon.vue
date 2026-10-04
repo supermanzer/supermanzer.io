@@ -2,7 +2,7 @@
     <v-row justify="center" class="mt-6">
         <v-card width="500">
             <v-img
-                :src="img_src"
+                :src="imgSrc"
                 height="200"
                 class="align-end text-white pa-2"
                 gradient="to top, rgba(0,0,0,0.7), rgb(0,0,0,0.1)"
@@ -15,7 +15,7 @@
                     </slot>
                 </v-card-title>
                 <div>
-                    <v-divider class="white text-white"></v-divider>
+                    <v-divider class="white text-white"/>
                     <v-card-subtitle>
                         <slot name="subtitle" />
                     </v-card-subtitle>
@@ -31,7 +31,7 @@
 </template>
 
 <script setup lang="js">
-const props = defineProps({
-    img_src: {type: String, required: false, default: "/img/components/construction.jpeg"}
+defineProps({
+    imgSrc: {type: String, required: false, default: "/img/components/construction.jpeg"}
 })
 </script>

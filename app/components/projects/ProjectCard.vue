@@ -9,10 +9,10 @@
         <v-card-title class="text-uppercase d-flex justify-center">
         {{ project.title }}
         <v-avatar v-if="project.meta.img" size="48px">
-            <v-img :src="project.meta.img"></v-img>
+            <v-img :src="project.meta.img"/>
         </v-avatar>
         </v-card-title>
-        <v-divider></v-divider>
+        <v-divider/>
         <v-card-text class="fill-height">
             <p class="mb-auto pa-2">
                 {{ project.description }}
@@ -27,7 +27,7 @@
         </v-card-text>
 
         <v-card-actions class="bottom-actions">
-            <v-spacer></v-spacer>
+            <v-spacer/>
             <v-btn
                 text
                 color="deep-purple accent-4"
@@ -44,15 +44,9 @@
 <script setup>
 import VersionStatus from './VersionStatus.vue';
 
-const { project } = defineProps(['project'])
-const projectUrl = computed(() => {
-    return `projects/${project.id}`
+defineProps({
+    project: { type: Object, required: true }
 })
-const hasLink = (link) => {
-    if (project.links) {
-        return Object.prototype.hasOwnProperty.call(project.links, link)
-    }
-}
 </script>
   
 <style scoped>

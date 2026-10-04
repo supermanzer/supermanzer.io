@@ -32,11 +32,12 @@
  * })
  */
 
+import type { Collections, PageCollections, SQLOperator } from "@nuxt/content"
 import type { RouteLocationNormalizedLoadedGeneric } from "vue-router"
 
 interface WhereCondition {
     field: string
-    operator: string
+    operator: SQLOperator
     value: unknown
 }
 
@@ -93,7 +94,7 @@ interface ContentPhotoOptions {
  * Every blog query goes through this so a draft can't leak via a listing,
  * a direct URL, or prev/next links.
  */
-export const withoutDrafts = <T extends { where: (...args: any[]) => T }>(
+export const withoutDrafts = <T extends { where: (field: string, operator: SQLOperator, value?: unknown) => T }>(
     query: T,
     collectionName: string,
     // Composables like useRuntimeConfig() only work before the first `await` in a
@@ -123,7 +124,7 @@ export const useContentPhoto = (options: ContentPhotoOptions = {}) => {
     const asyncDataKey = `photo-detail-${collectionName}-${itemPath}`
 
     return useAsyncData(asyncDataKey, async () => {
-        const image = await queryCollection(collectionName as any).path(itemPath).first()
+        const image = await queryCollection(collectionName as keyof Collections).path(itemPath).first()
 
         // If no image found, return a safe object structure to prevent 500s
         if (!image) {
@@ -131,7 +132,7 @@ export const useContentPhoto = (options: ContentPhotoOptions = {}) => {
             return { image: null, surround: { before: null, after: null } }
         }
 
-        const neighbors = await queryCollectionItemSurroundings(collectionName as any, itemPath)
+        const neighbors = await queryCollectionItemSurroundings(collectionName as keyof PageCollections, itemPath)
         return {
             image,
             surround: {
@@ -150,7 +151,7 @@ export const useContentItem = (options: ContentItemOptions = {}) => {
     const asyncDataKey = `${collectionName}-${itemPath}`
 
     return useAsyncData(asyncDataKey, async () => {
-        return await withoutDrafts(queryCollection(collectionName as any), collectionName).path(itemPath).first()
+        return await withoutDrafts(queryCollection(collectionName as keyof Collections), collectionName).path(itemPath).first()
     })
 }
 
@@ -161,7 +162,7 @@ export const useContentItemSurrounds = (options: ContentItemOptions = {}) => {
     const asyncDataKey = `${collectionName}-${itemPath}`
 
     return useAsyncData(asyncDataKey, async () => {
-        return await withoutDrafts(queryCollectionItemSurroundings(collectionName as any, itemPath, {
+        return await withoutDrafts(queryCollectionItemSurroundings(collectionName as keyof PageCollections, itemPath, {
             before: 1,
             after: 1
         }), collectionName)
@@ -175,25 +176,25 @@ export const useContentQuery = (options: ContentQueryOptions = {}) => {
     const asyncDataKey = `${collectionName}-${JSON.stringify(options)}`
 
     return useAsyncData(asyncDataKey, async () => {
-        let query = withoutDrafts(queryCollection(collectionName as any), collectionName)
+        let query = withoutDrafts(queryCollection(collectionName as keyof Collections), collectionName)
 
         // Apply where clauses
         if (options.where && Array.isArray(options.where)) {
             options.where.forEach(({ field, operator, value }: WhereCondition) => {
-                query = query.where(field as any, operator as any, value)
+                query = query.where(field, operator, value)
             })
         }
 
         // Apply ordering
         if (options.order) {
-            query = query.order(options.order.field as any, options.order.direction || 'ASC')
+            query = query.order(options.order.field as keyof Collections[keyof Collections], options.order.direction || 'ASC')
         }
 
         let data = await query.all()
 
         // Apply post-processing transformation if provided
         if (options.transform && typeof options.transform === 'function') {
-            data = options.transform(data) as any
+            data = options.transform(data) as typeof data
         }
 
         return data

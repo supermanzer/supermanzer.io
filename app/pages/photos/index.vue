@@ -16,16 +16,16 @@
           <p class="text-h5" :class="{ 'text-center': smAndDown }">{{ year }}</p>
           <div v-for="month in Object.keys(photos[year]).sort((a, b) => b - a)" :key="month" class="mt-2">
             <p class="text-h6" :class="{ 'text-center': smAndDown }">{{ getMonthName(month) }}</p>
-            <v-divider class="my-2"></v-divider>
+            <v-divider class="my-2"/>
             <v-row>
-              <v-col cols="12" sm="12" md="6" lg="3" v-for="photo in photos[year][month]" :key="photo.id" :class="['pa-5', { 'd-flex justify-center': smAndDown }]">
+              <v-col v-for="photo in photos[year][month]" :key="photo.id" cols="12" sm="12" md="6" lg="3" :class="['pa-5', { 'd-flex justify-center': smAndDown }]">
                 <PhotosThumbnail :photo="photo" />
               </v-col>
             </v-row>
           </div>
         </v-col>
       </v-row>
-      <v-divider class="my-3" :thickness="4"></v-divider>
+      <v-divider class="my-3" :thickness="4"/>
     </div>
   </MobileContainer>
 </template>

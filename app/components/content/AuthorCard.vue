@@ -7,9 +7,9 @@
       :subtitle="author.description"
       class="my-0"
     >
-      <template v-slot:append>
+      <template #append>
         <v-avatar tile :rounded="0" size="100">
-          <v-img alt="author" :src="author.image"></v-img>
+          <v-img alt="author" :src="author.image"/>
         </v-avatar>
       </template>
     </v-list-item>

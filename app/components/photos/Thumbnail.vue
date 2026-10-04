@@ -26,8 +26,6 @@
     },
 })
 
-const img = useImage()
-
 const photoNav = () => {
     console.log("PHOTO THUMBNAIL CLICKED");
     

@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="js">
-const props = defineProps({
+defineProps({
     title: {type: String, required: false, default: ""},
     subtitle: {type: String, required: false, default: ""}
 })

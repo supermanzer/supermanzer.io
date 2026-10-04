@@ -39,5 +39,5 @@ I recently added a section on Insights to help me track how I've scored by roast
 This one I think I might try to publish to the Google Play store.  That will be it's own learning journey.
 
 
-[compose-blog]: /blog/learning-compose-by-reading-what-ai-wrote
+[compose-blog]: /blog/learning-compose-by-reading-what-the-ai-wrote
 [fragrance-journey]: /projects/fragrance-journey

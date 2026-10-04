@@ -6,7 +6,7 @@
       </v-col>
       </v-row>
       <v-row justify="space-around" class="my-4">
-      <v-col cols="12" sm="12" md="6" lg="4" v-for="project in projects" :key="project._id">
+      <v-col v-for="project in projects" :key="project._id" cols="12" sm="12" md="6" lg="4">
         <ProjectsProjectCard :project="project" />
       </v-col>
     </v-row>

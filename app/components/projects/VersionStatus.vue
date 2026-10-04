@@ -8,8 +8,8 @@
             <v-chip density="compact" rounded="xs" elevation="1" :class="chipStatus">
                 {{ status }}
                 <v-bottom-sheet>
-                    <template v-slot:activator="{props}">
-                        <v-icon v-bind="props" icon="mdi-information" class=""></v-icon>
+                    <template #activator="{ props: activatorProps }">
+                        <v-icon v-bind="activatorProps" icon="mdi-information" class=""/>
                     </template>
                     <v-card class="pa-4 pb-10">
                         <v-card-title>
@@ -35,8 +35,8 @@
                 <v-chip density="compact" rounded="xs" elevation="1" :class="chipStatus">
                     {{ status }}
                     <v-bottom-sheet>
-                        <template v-slot:activator="{props}">
-                            <v-icon v-bind="props" icon="mdi-information" end></v-icon>
+                        <template #activator="{ props: activatorProps }">
+                            <v-icon v-bind="activatorProps" icon="mdi-information" end/>
                         </template>
                         <v-card class="pa-4 pb-10">
                             <v-card-title>

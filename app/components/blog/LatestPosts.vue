@@ -1,5 +1,5 @@
 <template>
-    <div class="pa-6 right-0" v-if="posts.length > 0">
+    <div v-if="posts.length > 0" class="pa-6 right-0">
         <p class="text-h4" :class="{'text-white': dark}">Latest Posts</p>
         <v-row justify="center" class="mt-2">
             <v-col
@@ -25,7 +25,7 @@ defineProps({
     dark: Boolean
 })
 
-const { data: posts, status, error } = await useAsyncData("blog-posts", () => {
+const { data: posts } = await useAsyncData("blog-posts", () => {
   return withoutDrafts(queryCollection("blog"), "blog")
   .order('created_at', 'DESC')
   .limit(4)

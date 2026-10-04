@@ -7,7 +7,7 @@
                     <NuxtLink :to="group.project.path">{{ group.project.title }}</NuxtLink>
                 </v-list-item-title>
             </v-list-item>
-            <v-divider></v-divider>
+            <v-divider/>
             <v-list v-if="group.posts.length" nav>
                 <v-list-item
                     v-for="post in group.posts"

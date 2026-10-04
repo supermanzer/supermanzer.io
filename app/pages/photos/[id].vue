@@ -27,7 +27,7 @@
                     class="flex-grow-1 cursor-pointer"
                     />
                 </div>
-                <v-divider class="mt-5 mx-8" opacity="1"></v-divider>
+                <v-divider class="mt-5 mx-8" opacity="1"/>
                 <PhotosInfoText v-if="data.image" :photo="data.image" />
 
                 <!-- Mobile nav arrows (shown only on small screens) -->
@@ -59,10 +59,6 @@
                 </v-row>
             </v-col>
         </v-row>
-    </v-card>
-    <v-card v-else flat>
-      <v-progress-circular indeterminate/>
-    </v-card>
 
     <!-- Fullscreen image dialog with zoom -->
     <v-dialog
@@ -87,6 +83,10 @@
           />
      
     </v-dialog>
+    </v-card>
+    <v-card v-else flat>
+      <v-progress-circular indeterminate/>
+    </v-card>
 </template>
 
 <script setup lang="js">
@@ -112,13 +112,6 @@ const next = computed(() => {
   return data.value?.surround?.after?.path || null
 })
 
-const handleZoom = (event) => {
-  event.preventDefault()
-  const zoomStep = 0.2
-  const direction = event.deltaY > 0 ? -1 : 1
-  zoomLevel.value = Math.max(1, Math.min(5, zoomLevel.value + (zoomStep * direction)))
-}
-
 // Reset zoom when dialog closes
 watch(isFullscreenOpen, (newVal) => {
   if (!newVal) {
@@ -129,9 +122,9 @@ watch(isFullscreenOpen, (newVal) => {
 
 // Handle arrow key navigation
 useEventListener('keydown', (event) => {    
-  if (event.key === 'ArrowLeft' && next !== null) {
+  if (event.key === 'ArrowLeft' && next.value !== null) {
     navigateTo(next)
-  } else if (event.key === 'ArrowRight' && previous !== null) {
+  } else if (event.key === 'ArrowRight' && previous.value !== null) {
     navigateTo(previous)
   }
 })

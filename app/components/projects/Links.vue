@@ -1,10 +1,9 @@
 <script setup lang="js">
 
-const props = defineProps({
+defineProps({
     links: {
         type: Object,
-        required: true,
-        default: () => []
+        default: () => ({})
     }
 })
 </script>
@@ -22,7 +21,6 @@ const props = defineProps({
          size="large"
          ripple
          class="my-3"
-        >
-        </v-btn>
+        />
     </div>
 </template>

@@ -13,8 +13,8 @@
 
 <script setup>
 const props = defineProps({
-  title: String,
-  type: String,
+  title: { type: String, default: undefined },
+  type: { type: String, default: undefined },
 })
 const open = ref(true)
 </script>

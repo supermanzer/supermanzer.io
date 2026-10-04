@@ -3,7 +3,7 @@
         <v-list-item>
             <v-list-item-title class="font-weight-medium ">Table of Contents</v-list-item-title>
         </v-list-item>
-        <v-divider></v-divider>
+        <v-divider/>
         <v-list nav>
             <v-list-item
              v-for="item in items"
@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="js">
-const props = defineProps({
+defineProps({
     items: {type: Array, required: true}
 })
 </script>

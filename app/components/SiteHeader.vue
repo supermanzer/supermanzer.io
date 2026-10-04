@@ -1,8 +1,4 @@
 <script setup>
-import { useTheme } from 'vuetify';
-import { useLocalStorage } from '@vueuse/core';
-
-const route = useRoute()
 const {links} = useNav();
 const drawer = useState("drawer", () => false)
 const title = "Supermanzer.io"
@@ -21,7 +17,7 @@ const classObject = reactive({
 <template>
   <div>
  
-      <v-navigation-drawer app  v-model="drawer" temporary v-if="$vuetify.display.mobile">
+      <v-navigation-drawer v-if="$vuetify.display.mobile"  v-model="drawer" app temporary>
         <v-list-item title="Supermanzer.io" subtitle="Site of Supermanzer" />
         <v-divider />
         <v-list-item

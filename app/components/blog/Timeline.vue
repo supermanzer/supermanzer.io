@@ -1,5 +1,5 @@
 <script setup lang="js">
-const props = defineProps({
+defineProps({
     posts: {type: Array, required: false, default: () => []},
     direction: {type: String, required: false, default: 'vertical'},
     align: {type: String, required: false, default: 'start'},
@@ -20,8 +20,8 @@ const props = defineProps({
       class="w-100"
     >
         <v-timeline-item v-for="post in posts" :key="post.id" class="w-100" dot-color="white">
-                <template v-slot:icon>
-                    <v-avatar :image="post.meta.img"></v-avatar>
+                <template #icon>
+                    <v-avatar :image="post.meta.img"/>
                 </template>
                 <v-card>
                     <v-list-item :to="post.path">

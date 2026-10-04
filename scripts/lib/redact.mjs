@@ -128,7 +128,7 @@ const PATH_RULES = [
     { name: 'home-path', re: /\/home\/[^/\s"'`]+/g, to: '~' },
     { name: 'home-path', re: /[A-Za-z]:\\Users\\[^\\\s"'`]+/g, to: '~' },
     // Claude Code's dashed project dir names: -Users-ryan-Projects-...
-    { name: 'home-path', re: /(?<![\w/])-Users-[^-\s"'`\/]+(?=-)/g, to: '-~' },
+    { name: 'home-path', re: /(?<![\w/])-Users-[^-\s"'`/]+(?=-)/g, to: '-~' },
 ]
 
 const HERE = dirname(fileURLToPath(import.meta.url))

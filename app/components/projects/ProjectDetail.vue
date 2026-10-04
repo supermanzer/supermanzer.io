@@ -14,13 +14,11 @@
                         <v-list-item
                         :title="project.title"
                         :subtitle="project.description"
-                        >
-                        </v-list-item>
+                        />
                         <v-list-item
                         :title="project.meta.lead.name"
                         subtitle="Lead Developer"
-                        >
-                        </v-list-item>
+                        />
                     </v-col>
                     <v-col cols="12" sm="12" md="6">
                         <projects-links :links="project.meta.links" />
@@ -37,11 +35,10 @@
 </template>
 
 <script setup lang="js">
-const props = defineProps({
+defineProps({
     project: {
         type: Object,
-        required: true,
-        default: () => {}
+        required: true
     }
 })
 </script>

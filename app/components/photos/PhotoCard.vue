@@ -1,7 +1,7 @@
 <template>
     
-    <v-dialog height="100%" v-model="dialog">
-        <template v-slot:activator="{ props: activatorProps }">
+    <v-dialog v-model="dialog" height="100%">
+        <template #activator="{ props: activatorProps }">
             <v-img
               v-bind="activatorProps"
              :lazy-src="img(photo.src, {width: 10, quality: 50})"
@@ -13,7 +13,7 @@
              
             />
         </template>
-        <template v-slot:default="{ save, close }">
+        <template #default>
 
             <v-card>
                 <v-img
@@ -21,10 +21,10 @@
                 :src="photo.src"
                 :alt="photo.description"
                 cover
-                ></v-img>
+                />
                 <v-card-title>{{ photo.title }}</v-card-title>
                 <v-card-subtitle>{{ photo.description }}</v-card-subtitle>
-                <v-divider></v-divider>
+                <v-divider/>
                 <v-card-text class="py-1 px-6">
                     Details:
                     <v-row>

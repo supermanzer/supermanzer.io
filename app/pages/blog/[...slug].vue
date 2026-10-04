@@ -17,7 +17,7 @@
            class="px-8 py-4">
             <v-card-item>
               <v-card-title class="text-h4 text-wrap">{{ post.title }}</v-card-title>
-              <v-divider></v-divider>
+              <v-divider/>
               <v-card-subtitle>{{ post.description }}</v-card-subtitle>
               <div>Created: 
                 {{ dateFormat(post.created_at) }}
